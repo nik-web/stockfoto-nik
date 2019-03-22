@@ -1,0 +1,3 @@
+# Exclude from versioning
+local.php
+*.local.php

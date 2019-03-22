@@ -1,0 +1,56 @@
+<?php
+/**
+ * stockfoto-nik cms
+ * 
+ * Application module view partial application owner data template
+ *  
+ * @author     Niklaus Höpfner <editor@nik-web.net>
+ * @link       https://github.com/nik-web/stockfoto-nik
+ * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
+ * @version    1.0.0
+ * @since      1.0.0
+ */
+$owner = $this->applicationOwner();
+?>
+<p>
+    <?= $owner->renderItem('forename') . '&nbsp;' . $owner->renderItem('surname')?>
+    <br />
+    <?= $owner->renderItem('street') . '&nbsp;' . $owner->renderItem('house_number')?>
+    <br />
+    <?= $owner->renderItem('postcode') . '&nbsp;' . $owner->renderItem('city')?>
+</p>
+<p>
+    <strong>
+        E-Mail:
+    </strong>
+    <?= ' ' . $owner->renderItem('contact_mail') ?>
+    <?php
+    if ('' != $owner->renderItem('phone_number')) {
+    ?>
+    <br />
+    <strong>
+        Telefon:
+    </strong>
+    <?= ' ' . $owner->renderItem('phone_number') ?>
+    <?php
+    }
+    if ('' != $owner->renderItem('mob_phone_number')) {
+    ?>
+    <br />
+    <strong>
+        Mobil:
+    </strong>
+    <?= ' ' . $owner->renderItem('mob_phone_number') ?>
+    <?php
+    }
+    if ('' != $owner->renderItem('fax_number')) {
+    ?>
+    <br />
+    <strong>
+        Fax:
+    </strong>
+    <?= ' ' . $owner->renderItem('fax_number') ?>
+    <?php
+    }
+    ?>
+</p>

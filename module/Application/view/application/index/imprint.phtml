@@ -1,0 +1,47 @@
+<?php
+/**
+ * stockfoto-nik cms
+ * 
+ * Imprint view template (main content)
+ *  
+ * @author     Niklaus Höpfner <editor@nik-web.net>
+ * @link       https://github.com/nik-web/stockfoto-nik
+ * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
+ * @version    1.0.0
+ * @since      1.0.0
+ */
+
+$applicationName = $this->applicationData()->renderName();
+
+$this->headTitle('Impressum von ' . $applicationName);
+$description = 'Das Impressum von '  . $applicationName . ' Anbieterkennzeichnung gemäß § 5 TMG.';
+$keywords = 'Impressum, Webanwendung, Anbieterkennzeichnung';
+$this->headMeta()->appendName('description', $description)
+    ->appendName('keywords', $keywords);
+?>
+<header>
+    <h1>
+        Impressum
+    </h1>
+    <p>
+        Anbieterkennzeichnung gemäß §&nbsp;5&nbsp;TMG
+    </p>
+</header>
+<section>
+    <h2>
+        Anbieter
+    </h2>
+    <?= $this->render('components/application_owner_data.phtml')?>
+    <p>
+        <strong>
+            Umsatzsteuer-Identifikationsnummer gem. §&nbsp;27&nbsp;a&nbsp;Umsatzsteuergesetz:
+        </strong>
+        <?= ' ' . $this->applicationOwner()->renderItem('tax_id_number') ?>
+        <br />
+        <strong>
+            Inhaltlich Verantwortlicher gemäß §&nbsp;55&nbsp;Abs.&nbsp;2&nbsp;RStV:
+        </strong>
+        Höpfner&nbsp;Niklaus
+        ( Anschrift&nbsp;wie&nbsp;oben )
+    </p>
+</section>

@@ -1,0 +1,115 @@
+<?php
+/**
+ * stockfoto-nik cms
+ * 
+ * Homepage view template (main content)
+ *  
+ * @author     Niklaus Höpfner <editor@nik-web.net>
+ * @link       https://github.com/nik-web/stockfoto-nik
+ * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
+ * @version    1.0.0
+ * @since      1.0.0
+ */
+
+$applicationName = $this->applicationData()->renderName();
+
+$this->headTitle('Datenschutzerklärung von ' . $applicationName);
+$description = 'Die Datenschutz-Bestimmungen dieser Webanwendung.';
+$keywords = 'Datenschutzerklärung, Datenschutz, Bestimmungen';
+$this->headMeta()->appendName('description', $description)
+    ->appendName('keywords', $keywords);
+?>
+<header>
+    <h1>
+        Datenschutzerklärung
+    </h1>
+    <p>
+        Das Thema Datenschutz wird von mir sehr erst genommen. Die Regeln des 
+        Datenschutzgesetzes werden von mir in vollem Umfang eingehalten.
+        <br />
+        Die nachfolgende Datenschutzerklärung gibt Ihnen einen Überblick darüber,  
+        welche Art von Daten zu welchem Zweck erhoben werden.
+    </p>
+</header>
+<section>
+    <h2>
+        Vorwort
+    </h2>
+    <p>
+        Die Nutzung unserer Seite ist ohne eine Angabe von personenbezogenen Daten möglich. 
+        Für die Nutzung einzelner Services unserer Seite können sich hierfür 
+        abweichende Regelungen ergeben, die in diesem Falle nachstehend gesondert erläutert werden. 
+        Ihre personenbezogenen Daten (z.B. Name, Anschrift, E-Mail, Telefonnummer, u.ä.) 
+        werden von uns nur gemäß den Bestimmungen des deutschen Datenschutzrechts verarbeitet. 
+        Daten sind dann personenbezogen, wenn sie eindeutig einer bestimmten natürlichen Person 
+        zugeordnet werden können. 
+        Die rechtlichen Grundlagen des Datenschutzes finden Sie im Bundesdatenschutzgesetz (BDSG) 
+        und dem Telemediengesetz (TMG). Nachstehende Regelungen informieren Sie insoweit über 
+        die Art, den Umfang und Zweck der Erhebung, die Nutzung und die Verarbeitung 
+        von personenbezogenen Daten durch den Anbieter.
+    </p>
+</section>
+<section>
+    <h2>
+        Verantwortlicher für die Datenerfassung
+    </h2>
+    <p>
+        Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. 
+        Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.
+    </p>
+</section>
+<section>
+    <h2>
+        Zugriffsdaten/ Server-Logfiles
+    </h2>
+    <p>
+        Aus technischen Gründen werden u.a. folgende Daten, die Ihr Internet-Browser 
+        an uns bzw. an unseren Webspace-Provider übermittelt, erfasst (sogenannte Server-Logfiles):
+    </p>
+    <ul>
+        <li>
+            Browsertyp und -version
+        </li>
+        <li>
+            verwendetes Betriebssystem
+        </li>
+        <li>
+            Webseite, von der aus Sie uns besuchen (Referrer URL)
+        </li>
+        <li>
+            Webseite, die Sie besuchen
+        </li>
+        <li>
+            Datum und Uhrzeit Ihres Zugriffs
+        </li>
+        <li>
+            übertragene Datenmenge
+        </li>
+        <li>
+            Ihre Internet Protokoll (IP)-Adresse
+        </li>
+        <li>
+            Meldung über erfolgreichen Abruf
+        </li>
+    </ul>
+    <p>
+        Diese anonymen Daten werden getrennt von Ihren eventuell angegebenen 
+        personenbezogenen Daten gespeichert und lassen so keine Rückschlüsse 
+        auf eine bestimmte Person zu. Sie werden zu statistischen Zwecken 
+        ausgewertet, um unseren Internetauftritt und unsere Angebote optimieren 
+        zu können.
+    </p>
+</section>
+<section>
+    <h2>
+        Auskunft/ Widerruf/ Löschung
+    </h2>
+    <p>
+        Sie können sich aufgrund des Bundesdatenschutzgesetzes bei Fragen zur Erhebung, 
+        Verarbeitung oder Nutzung Ihrer personenbezogenen Daten und deren Berichtigung, 
+        Sperrung, Löschung oder einem Widerruf einer erteilten Einwilligung unentgeltlich 
+        an uns wenden. Wir weisen darauf hin, dass Ihnen ein Recht auf Berichtigung 
+        falscher Daten oder Löschung personenbezogener Daten zusteht, sollte 
+        diesem Anspruch keine gesetzliche Aufbewahrungspflicht entgegenstehen.
+    </p>
+</section>

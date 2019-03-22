@@ -1,0 +1,74 @@
+<?php
+/**
+ * stockfoto-nik cms
+ * 
+ * Application module view laout template
+ *  
+ * @author     Niklaus Höpfner <editor@nik-web.net>
+ * @link       https://github.com/nik-web/stockfoto-nik
+ * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
+ * @version    1.0.0
+ * @since      1.0.0
+ */
+
+
+// set <head> elements
+// set metadata <title> element
+$this->headTitle()->setAutoEscape(false);
+
+// set metadata <meta> elements
+// Zend\View\Helper\HeadMeta
+$this->headMeta()->setAutoEscape(false);
+
+// set charset
+$this->headMeta()->setCharset('UTF-8');
+
+// set viewport
+$this->headMeta()->appendName(
+    'viewport', 'width=device-width, initial-scale=1.0'
+);
+
+// set  X-UA-Compatible META tag
+$this->headMeta()->appendHttpEquiv('X-UA-Compatible', 'IE=edge');
+
+// set metadata <link> elements
+// Zend\View\Helper\HeadLink
+$this->headLink()->setAutoEscape(false);
+
+// set icon
+$this->headLink(['rel' => 'shortcut icon', 'type' => 'image/x-icon', 'href' => $this->basePath() . '/img/favicons/favicon.ico']);
+$this->headLink(['rel' => 'shortcut icon', 'type' => 'image/png', 'href' => $this->basePath() . '/img/favicons/favicon-16x16.png']);
+
+// set styles
+$this->headLink()->appendStylesheet($this->basePath() . '/css/styles.css');
+
+// set js
+$this->inlineScript()->prependFile(
+    $this->basePath() . '/js/bootstrap/bootstrap.min.js', ''
+);
+$this->inlineScript()->prependFile(
+    $this->basePath() . '/js/popper/popper.min.js', ''
+);
+$this->inlineScript()->prependFile(
+    $this->basePath() . '/js/jquery/jquery.min.js', ''
+);
+
+?>
+<?= $this->doctype() ?>
+
+<html lang="de">
+    <head>
+        <?= $this->headTitle() . "\n"; ?>
+        <?= $this->headMeta() . "\n"; ?>
+        <?= $this->headLink() . "\n"; ?>
+    </head>
+    <body>
+        <?= $this->header ?>
+        <?= $this->navigation ?>
+        <main class="container">
+            <?= $this->content  . "\n"; ?>
+        </main>
+        <?= $this->footer . "\n"; ?>
+        <?= $this->inlineScript() . "\n"; ?>
+    </body>
+</html>

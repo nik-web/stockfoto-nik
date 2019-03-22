@@ -1,0 +1,33 @@
+{
+    "name": "nik-web/stockfoto-nik",
+    "description": "stockfoto-nik cms with Zend Framework 3",
+    "type": "project",
+    "keywords": [
+        "base",
+        "application",
+        "framework",
+        "mvc",
+        "zf"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Niklaus Höpfer",
+            "email": "editor@nik-web.net",
+            "homepage": "https://webentwickler-hoepfner.com/",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.0",
+        "zendframework/zend-mvc": "^3.1",
+        "zendframework/zend-navigation": "^2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\": "module/Application/src/"
+        }
+    }
+}
