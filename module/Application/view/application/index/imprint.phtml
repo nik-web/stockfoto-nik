@@ -11,17 +11,21 @@
  * @since      1.0.0
  */
 
+//Individual part of the placeholder
+$path = '_module_application_view_index_imprint';
+
 $applicationName = $this->applicationData()->renderName();
 
-$this->headTitle('Impressum von ' . $applicationName);
-$description = 'Das Impressum von '  . $applicationName . ' Anbieterkennzeichnung gemäß § 5 TMG.';
-$keywords = 'Impressum, Webanwendung, Anbieterkennzeichnung';
+$title = sprintf($this->translate('title' . $path), $applicationName);
+$this->headTitle($title);
+$description = sprintf($this->translate('meta_description_content' . $path), $applicationName);
+$keywords = $this->translate('meta_keywords_content' . $path);
 $this->headMeta()->appendName('description', $description)
     ->appendName('keywords', $keywords);
 ?>
 <header>
     <h1>
-        Impressum
+        <?= $this->translate('main_heading' . $path) ?>
     </h1>
     <p>
         Anbieterkennzeichnung gemäß §&nbsp;5&nbsp;TMG

@@ -11,7 +11,6 @@
 
 namespace Application\ValueObject;
 
-
 /**
  * Application Data
  * 
@@ -23,4 +22,9 @@ class Data {
     
     const NAME = 'stockfoto-nik';
     
+    const MY_FALLBACK_LOCALE = 'de_DE';
+    
+    const MY_LOCALES = [self::MY_FALLBACK_LOCALE, 'en_US', 'ru_RU'];
+    // if only one locale on homepage
+    //const MY_LOCALES = [self::MY_FALLBACK_LOCALE,];  
 }

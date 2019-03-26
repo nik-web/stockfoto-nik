@@ -2,9 +2,8 @@
 /**
  * stockfoto-nik cms
  * 
- * List of enabled modules for this application.
- * This should be an array of module namespaces used in the application.
- * 
+ * Application module translate route segments configuration de_DE
+ *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
  * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
@@ -12,10 +11,9 @@
  * @since      1.0.0
  */
 
+namespace Application;
+
 return [
-    'Zend\Router',
-    'Zend\Navigation',
-    'Zend\Mvc\I18n',
-    'Zend\I18n',
-    'Application',
+    'imprint'        => 'impressum',
+    'privacy-policy' => 'datenschutz',
 ];

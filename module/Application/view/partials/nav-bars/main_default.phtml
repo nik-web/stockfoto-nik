@@ -29,13 +29,13 @@
                 if ($page->isActive()) {
     ?>
             <span class="active">
-                <?=  $page->getLabel() ?>
+                <?=  $this->translate($page->getLabel()) ?>
             </span>
     <?php
                 } else {
     ?>
             <a href="<?= $page->getHref() ?>">
-                <?=  $page->getLabel() ?>
+                <?=  $this->translate($page->getLabel()) ?>
             </a>
     <?php
                 }
@@ -46,7 +46,7 @@
     ?>
         <li class="main-nav-list-item-dropdown">
             <a id="<?= $page->getId() ?>" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?= $page->getLabel() . ' &darr;' ?>
+                <?= $this->translate($page->getLabel()) . ' &darr;' ?>
             </a>
             <ul class="dropdown-menu" aria-labelledby="<?= $page->getId() ?>">
             <?php
@@ -60,13 +60,13 @@
                     if ($child->isActive()) {
                 ?>
                     <span class="active">
-                        <?= $child->getLabel() ?>
+                        <?= $this->translate($child->getLabel()) ?>
                     </span>
                 <?php
                     } else {
                 ?>
                     <a href="<?= $child->getHref() ?>">
-                        <?= $child->getLabel() ?>
+                        <?= $this->translate($child->getLabel()) ?>
                     </a>
                 <?php
                     }

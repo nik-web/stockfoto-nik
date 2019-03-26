@@ -25,6 +25,7 @@ use Zend\ModuleManager\ModuleManagerInterface;
  */
 class Module implements InitProviderInterface, ConfigProviderInterface, BootstrapListenerInterface
 {
+    
     /**
      * {@inheritDoc}
      */
@@ -40,7 +41,7 @@ class Module implements InitProviderInterface, ConfigProviderInterface, Bootstra
      */
     public function getConfig()
     {
-        return include __DIR__ . '/../config/module.config.php';
+        return include APPLICATION_MODULE_ROOT . '/config/module.config.php';
     }
     
     /**
@@ -54,5 +55,6 @@ class Module implements InitProviderInterface, ConfigProviderInterface, Bootstra
         // attach module listener
         $applicationListener = new ApplicationListener();
         $applicationListener->attach($eventManager); 
+        
     }
 }

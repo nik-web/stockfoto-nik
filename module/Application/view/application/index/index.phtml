@@ -11,16 +11,20 @@
  * @since      1.0.0
  */
 
+//Individual part of the translate placeholder
+$path = '_module_application_view_index_index';
+
 $applicationName = $this->applicationData()->renderName();
 
-$this->headTitle('Stockfotos vom ' . $applicationName);
-$description = 'Sockfotografie von ' . $applicationName;
-$keywords = 'Home, Startseite, Stockfoto, Foto, Bilder, Stockfotografie';
+$title = sprintf($this->translate('title' . $path), $applicationName);
+$this->headTitle($title);
+$description = sprintf($this->translate('meta_description_content' . $path), $applicationName);
+$keywords = $this->translate('meta_keywords_content' . $path);
 $this->headMeta()->appendName('description', $description)
     ->appendName('keywords', $keywords);
 ?>
 <header>
     <h1>
-        <?= 'Stockfotos bei ' . $applicationName ?>
+        <?= sprintf($this->translate('main_heading' . $path), $applicationName) ?>
     </h1>
 </header>

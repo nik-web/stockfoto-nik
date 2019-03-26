@@ -11,11 +11,13 @@
 
 namespace Application\Listener;
 
+use Application\ValueObject\Data;
 use Zend\EventManager\AbstractListenerAggregate;
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\EventInterface;
 use Zend\Mvc\MvcEvent;
 use Zend\View\Model\ViewModel;
+use Locale;
 
 /**
  * Application listener
@@ -30,12 +32,43 @@ class ApplicationListener extends AbstractListenerAggregate
      */
     public function attach(EventManagerInterface $events, $priority = -100)
     {
+        $this->listeners[] = $events->attach(
+            MvcEvent::EVENT_ROUTE, 
+            array($this, 'setupLocalization'),
+            $priority
+        );
         // Listen to the "render" event and add layout segments to the view
         $this->listeners[] = $events->attach(
             MvcEvent::EVENT_RENDER,
             [$this, 'addLayoutSegments'],
             $priority
         );
+    }
+    
+    /**
+     * Listen to the "route" event and setup the localization
+     *
+     * @param  MvcEvent $e
+     * @return void
+     */
+    public function setupLocalization(EventInterface $e)
+    {
+        $routeMatch = $e->getRouteMatch();
+        
+        $locale = $routeMatch->getParam('locale');
+        
+        $translator = $e->getApplication()
+            ->getServiceManager()->get('MvcTranslator');
+        
+        $translator->setFallbackLocale(Data::MY_FALLBACK_LOCALE);
+        
+        if (!empty($locale) && in_array ($locale, Data::MY_LOCALES)) {
+            Locale::setDefault($locale);
+            $translator->setLocale($locale);
+        } else {
+            Locale::setDefault(Data::MY_FALLBACK_LOCALE);
+            $translator->setLocale(Data::MY_FALLBACK_LOCALE);
+        }
     }
 
     /**

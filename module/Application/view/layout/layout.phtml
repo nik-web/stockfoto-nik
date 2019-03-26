@@ -54,9 +54,8 @@ $this->inlineScript()->prependFile(
 );
 
 ?>
-<?= $this->doctype() ?>
-
-<html lang="de">
+<?= $this->doctype() . "\n"; ?>
+<html lang="<?= locale_get_primary_language ($this->locale()) ?>">
     <head>
         <?= $this->headTitle() . "\n"; ?>
         <?= $this->headMeta() . "\n"; ?>

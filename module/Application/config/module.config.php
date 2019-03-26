@@ -22,4 +22,5 @@ return [
     'router'          => include $confPath . 'router/router.config.php',
     'view_manager'    => include $confPath . 'view_manager/view_manager.config.php',
     'view_helpers'    => include $confPath . 'view_helpers/view_helpers.config.php',
+    'translator'      => include $confPath . 'translator/translator.config.php',
 ];

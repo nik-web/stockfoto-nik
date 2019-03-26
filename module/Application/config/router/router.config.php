@@ -13,38 +13,49 @@
 
 namespace Application;
 
-use Application\Controller\IndexController;
-use Zend\Router\Http\Literal;
+use Zend\Router\Http\Segment;
 
 return [
     'routes' => [
         'home' => [
-            'type' => Literal::class,
+            'type' => Segment::class,
             'options' => [
-                'route'    => '/',
+                'route'    => '/[:locale]',
+                'constraints' => [
+                    'locale'     => implode('|', ValueObject\Data::MY_LOCALES),
+                ],
                 'defaults' => [
-                    'controller' => IndexController::class,
+                    'controller' => Controller\IndexController::class,
                     'action'     => 'index',
+                    'locale'     => ValueObject\Data::MY_FALLBACK_LOCALE,
                 ],
             ],
         ],
         'imprint' => [
-            'type' => Literal::class,
+            'type' => Segment::class,
             'options' => [
-                'route'    => '/imprint',
+                'route'    => '/:locale/imprint',
+                'constraints' => [
+                    'locale'     => implode('|', ValueObject\Data::MY_LOCALES),
+                ],
                 'defaults' => [
-                    'controller' => IndexController::class,
+                    'controller' => Controller\IndexController::class,
                     'action'     => 'imprint',
+                    'locale'     => ValueObject\Data::MY_FALLBACK_LOCALE,
                 ],
             ],
         ],
         'privacy-policy' => [
-            'type' => Literal::class,
+            'type' => Segment::class,
             'options' => [
-                'route'    => '/privacy-policy',
+                'route'    => '/:locale/privacy-policy',
+                'constraints' => [
+                    'locale'     => implode('|', ValueObject\Data::MY_LOCALES),
+                ],
                 'defaults' => [
-                    'controller' => IndexController::class,
+                    'controller' => Controller\IndexController::class,
                     'action'     => 'privacy-policy',
+                    'locale'     => ValueObject\Data::MY_FALLBACK_LOCALE,
                 ],
             ],
         ],

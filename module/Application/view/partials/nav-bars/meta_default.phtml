@@ -24,13 +24,13 @@
             if ($page->isActive()) {
         ?>
             <span class="active">
-                <?= $page->getLabel() ?>
+                <?= $this->translate($page->getLabel()) ?>
             </span>
         <?php
             } else {
         ?>
             <a class="meta-nav-link" href="<?= $page->getHref() ?>">
-                <?= $page->getLabel() ?>
+                <?= $this->translate($page->getLabel()) ?>
             </a>
         <?php
             }

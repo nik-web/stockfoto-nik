@@ -11,17 +11,22 @@
  * @since      1.0.0
  */
 
+//Individual part of the placeholder
+$path = '_module_application_view_index_privacy-policy';
+
 $applicationName = $this->applicationData()->renderName();
 
-$this->headTitle('Datenschutzerklärung von ' . $applicationName);
-$description = 'Die Datenschutz-Bestimmungen dieser Webanwendung.';
-$keywords = 'Datenschutzerklärung, Datenschutz, Bestimmungen';
+$title = sprintf($this->translate('title' . $path), $applicationName);
+$this->headTitle($title);
+$description = sprintf($this->translate('meta_description_content' . $path), $applicationName);
+$keywords = $this->translate('meta_keywords_content' . $path);
 $this->headMeta()->appendName('description', $description)
     ->appendName('keywords', $keywords);
+
 ?>
 <header>
     <h1>
-        Datenschutzerklärung
+        <?= $this->translate('main_heading' . $path) ?>
     </h1>
     <p>
         Das Thema Datenschutz wird von mir sehr erst genommen. Die Regeln des 

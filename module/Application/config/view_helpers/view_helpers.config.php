@@ -17,11 +17,15 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
     'factories' => [
-        View\Helper\Owner::class => InvokableFactory::class,
-        View\Helper\Data::class  => InvokableFactory::class,
+        View\Helper\Owner::class      => InvokableFactory::class,
+        View\Helper\Data::class       => InvokableFactory::class,
+        View\Helper\Locale::class     => View\Helper\Factory\LocaleFactory::class,
+        View\Helper\RouteMatch::class => View\Helper\Factory\RouteMatchFactory::class,
     ],
     'aliases' => [
         'applicationOwner' => View\Helper\Owner::class,
         'applicationData'  => View\Helper\Data::class,
+        'locale'           => View\Helper\Locale::class,
+        'routeMatch'       => View\Helper\RouteMatch::class,
     ]
 ];
