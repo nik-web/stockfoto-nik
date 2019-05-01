@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module template map configuration
+ * User module template map configuration
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,31 +11,30 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace User;
 
-use Zend\Stdlib\ArrayUtils;
+$viewPathReadUser = USER_MODULE_ROOT . '/view/user/read-user/';
+$vievPathAuth = USER_MODULE_ROOT . '/view/user/auth/';
+$viewPathWriteUser = USER_MODULE_ROOT . '/view/user/write-user/';
+$viewPathDeleteUser = USER_MODULE_ROOT . '/view/user/delete-user/';
+$viewPathRegistration = USER_MODULE_ROOT . '/view/user/registration/';
+$viewPathPartials = USER_MODULE_ROOT . '/view/partials/';
 
-$viewPathLayot = APPLICATION_MODULE_ROOT . '/view/layout/';
-$viewPathError = APPLICATION_MODULE_ROOT . '/view/error/';
-$viewPathIndex = APPLICATION_MODULE_ROOT . '/view/application/index/';
-$viewPathPartials = APPLICATION_MODULE_ROOT . '/view/partials/';
-$viewPathCompoents = APPLICATION_MODULE_ROOT . '/view/components/';
-
-$layoutSegments = include APPLICATION_MODULE_ROOT
-    . '/config/view_manager/layout_segments.config.php';
-
-$templateMap = [
-    'layout/layout'                           => $viewPathLayot . 'layout.phtml',
-    'error/404'                               => $viewPathError . '404.phtml',
-    'error/index'                             => $viewPathError . 'index.phtml',
-    'application/index/index'                 => $viewPathIndex . 'index.phtml',
-    'application/index/imprint'               => $viewPathIndex . 'imprint.phtml',
-    'application/index/privacy-policy'        => $viewPathIndex . 'privacy-policy.phtml',
-    'partials/nav-bars/brand_default.phtml'   => $viewPathPartials . 'nav-bars/brand_default.phtml',
-    'partials/nav-bars/main_default.phtml'    => $viewPathPartials . 'nav-bars/main_default.phtml',
-    'partials/nav-bars/meta_default.phtml'    => $viewPathPartials . 'nav-bars/meta_default.phtml',
-    'components/application_owner_data.phtml' => $viewPathCompoents . 'application_owner_data.phtml',
-    'components/locate_nav.phtml'             => $viewPathCompoents . 'locate_nav.phtml',
+return [
+    'user/read-user/account'           => $viewPathReadUser . 'account.phtml',
+    'user/read-user/index'             => $viewPathReadUser . 'index.phtml',
+    'user/read-user/detail'            => $viewPathReadUser . 'detail.phtml',
+    'user/auth/login'                  => $vievPathAuth . 'login.phtml',
+    'user/auth/not-authorized'         => $vievPathAuth . 'not-authorized.phtml',
+    'user/write-user/add'              => $viewPathWriteUser . 'add.phtml',
+    'user/write-user/change-password'  => $viewPathWriteUser . 'change-password.phtml',
+    'user/write-user/edit'             => $viewPathWriteUser . 'edit.phtml',
+    'user/write-user/reset-password'   => $viewPathWriteUser . 'reset-password.phtml',
+    'user/write-user/set-password'     => $viewPathWriteUser . 'set-password.phtml',
+    'user/delete-user/delete'          => $viewPathDeleteUser . 'delete.phtml',
+    'user/delete-user/delete-own'      => $viewPathDeleteUser . 'delete-own.phtml',
+    'user/registration/create'         => $viewPathRegistration . 'create.phtml',
+    'user/registration/confirm'        => $viewPathRegistration . 'confirm.phtml',
+    'partials/nav-bars/sing_in.phtml'  => $viewPathPartials . 'nav-bars/sing_in_default.phtml',
+    'partials/nav-bars/sing_out.phtml' => $viewPathPartials . 'nav-bars/sing_out_default.phtml',
 ];
-// Merge two arrays and return
-return ArrayUtils::merge($templateMap, $layoutSegments);

@@ -9,52 +9,59 @@
  * @since      1.0.0
  */
 
-namespace Application\View\Helper;
+namespace User\View\Helper;
 
-use Zend\Http\Request;
-use Zend\Router\RouteStackInterface;
 use Zend\View\Helper\AbstractHelper;
-
+use User\Repository\UserInterface;
+use Zend\Authentication\AuthenticationServiceInterface;
 
 
 /**
- * Application route match view helper
+ * User alias view helper
  *
- * @package Application
- * @subpackage Application\View\Helper
+ * @package User
+ * @subpackage User\View\Helper
  */
-class RouteMatch extends AbstractHelper
+class Alias extends AbstractHelper
 {
     /**
-     * RouteStckIterface instanze
+     * 
      *
-     * @var RouteStackInterface $router 
+     * @var UserInterface $repository 
      */
-    protected $router;
+    protected $repository;
     
     /**
-     * @var Request $request
+     * @var AuthenticationServiceInterface $service
      */
-    protected $request;
+    protected $service;
 
     /**
      * Constructor
      * 
-     * @param RouteStackInterface  $router
-     * @param Request $request
+     * @param UserInterface $repository
+     * @param AuthenticationServiceInterface $service
      */
     
-    public function __construct(RouteStackInterface $router, Request $request)
-    {
-        $this->router = $router;
-        $this->request = $request;
+    public function __construct(
+            UserInterface $repository, AuthenticationServiceInterface $service
+    ) {
+        $this->repository = $repository;
+        $this->service = $service;
     }
     
     /**
-     * @return \Zend\Router\RouteMatch
+     * @return null|string user alias
      */
     public function __invoke()
     {
-        return $this->router->match($this->request);
+        if (!$this->service->hasIdentity()) {
+            return;
+        }
+        $identity = $this->service->getIdentity();
+        $user = $this->repository->findByEmail($identity);
+        $alias = $user->getAlias();
+        
+        return $alias;
     }
 }

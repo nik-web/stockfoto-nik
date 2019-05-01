@@ -9,100 +9,172 @@
  * @since      1.0.0
  */
 
-namespace Application\Listener;
+namespace User\Listener;
 
-use Application\ValueObject\Data;
 use Zend\EventManager\AbstractListenerAggregate;
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\EventInterface;
 use Zend\Mvc\MvcEvent;
-use Zend\View\Model\ViewModel;
-use Locale;
+use User\Entity\Securitytoken;
+use User\Service\RbacManagerInterface;
+use Zend\Authentication\AuthenticationServiceInterface;
+use User\Service\AuthManagerInterface;
+use Zend\Http\Header\SetCookie;
+use User\Controller\AuthController;
+use User\Controller\RegistrationController;
 
 /**
- * Application listener
+ * User listener
  * 
- * @package Application
- * @subpackage Application\Listener
+ * @package User
+ * @subpackage User\Listener
  */
-class ApplicationListener extends AbstractListenerAggregate
+class UserListener extends AbstractListenerAggregate
 {
     /**
      * {@inheritDoc}
      */
     public function attach(EventManagerInterface $events, $priority = -100)
     {
+        
         $this->listeners[] = $events->attach(
-            MvcEvent::EVENT_ROUTE, 
-            array($this, 'setupLocalization'),
+            MvcEvent::EVENT_DISPATCH, 
+            [$this, 'setupRememberMe'],
             $priority
         );
-        // Listen to the "render" event and add layout segments to the view
+        
         $this->listeners[] = $events->attach(
-            MvcEvent::EVENT_RENDER,
-            [$this, 'addLayoutSegments'],
+            MvcEvent::EVENT_DISPATCH, 
+            [$this, 'setupLogg'],
             $priority
         );
+        
+        $this->listeners[] = $events->attach(
+            MvcEvent::EVENT_DISPATCH, 
+            [$this, 'setupAccess'],
+            $priority
+        );  
     }
     
     /**
-     * Listen to the "route" event and setup the localization
+     * Setup access
      *
      * @param  MvcEvent $e
      * @return void
      */
-    public function setupLocalization(EventInterface $e)
+    public function setupAccess(EventInterface $e)
     {
-        $routeMatch = $e->getRouteMatch();
-        
-        $locale = $routeMatch->getParam('locale');
-        
-        $translator = $e->getApplication()
-            ->getServiceManager()->get('MvcTranslator');
-        
-        $translator->setFallbackLocale(Data::MY_FALLBACK_LOCALE);
-        
-        if (!empty($locale) && in_array ($locale, Data::MY_LOCALES)) {
-            Locale::setDefault($locale);
-            $translator->setLocale($locale);
-        } else {
-            Locale::setDefault(Data::MY_FALLBACK_LOCALE);
-            $translator->setLocale(Data::MY_FALLBACK_LOCALE);
+        $serviceManager = $e->getApplication()->getServiceManager();
+        $permission = $e->getRouteMatch()->getMatchedRouteName();
+        $rbacManager = $serviceManager->get(RbacManagerInterface::class);
+        $identity = $serviceManager->get(AuthenticationServiceInterface::class)
+            ->getIdentity();
+        $result = $rbacManager->isGranted($identity, $permission);
+        if (! $result) {
+            $controller = $e->getTarget();
+            // Redirect the user to the not authorized page.
+            $locale = $e->getRouteMatch()->getParam('locale');
+            
+            return $controller->redirect()
+                ->toRoute('not-authorized', [$locale,]);
         }
     }
-
+    
     /**
-     * Add layout segments to the view
+     * Setup logg set redirect URL to session
      *
      * @param  MvcEvent $e
      * @return void
      */
-    public function addLayoutSegments(EventInterface $e)
+    public function setupLogg(EventInterface $e)
     {
-        /** @var $viewModel ViewModel */
-        $viewModel = $e->getViewModel();
-        // skip if current ViewModel is not of expected type
-        if ('Zend\View\Model\ViewModel' != get_class($viewModel)) {
-            return;
+        $controllerName = $e->getRouteMatch()->getParam('controller', null);
+        if ((AuthController::class != $controllerName)
+            || (RegistrationController::class != $controllerName)
+        ) {
+            // Retrieve an instance of the session manager
+            // from the service manager.
+            $serviceManager = $e->getApplication()->getServiceManager();
+            $lastURLSessionContainer = $serviceManager
+                ->get('lastURLSessionContainer');                        
+            $lastURL = $e->getApplication()->getRequest()->getUri();
+            // Make the URL string (remove user info and port)
+            $lastURL->setPort(null)->setUserInfo(null);
+            $redirectUrl = $lastURL->toString();
+            // If you have the session container, you can store
+            // the redirectUrl there.
+            $lastURLSessionContainer->lastURL = $redirectUrl;
         }
-        /** @var AggregateResolver $resolver */
-        $resolver = $e->getApplication()->getServiceManager()
-            ->get('ViewResolver');
-        $segmentsConfig = APPLICATION_MODULE_ROOT
-            . '/config/view_manager/layout_segments.config.php';
-        $segments = include $segmentsConfig;
-        // loop through layout segments
-        foreach (array_keys($segments) as $segmentPath) {
-            // skip if layout segment does not exist
-            if (!$resolver->resolve($segmentPath)) {
-                continue;
+    }
+    
+    /**
+     * Setup remember me
+     *
+     * @param  MvcEvent $e
+     * @return void
+     */
+    public function setupRememberMe(EventInterface $e)
+    {
+        $serviceManager = $e->getApplication()->getServiceManager();
+        $authService = $serviceManager
+            ->get(AuthenticationServiceInterface::class);
+        $checkIdentity = $authService->hasIdentity();
+        $controller = $e->getTarget();
+        // Zend\Http\Header\Cookie
+        $cookie = $controller->getRequest()->getCookie();
+        if ((! $checkIdentity && isset($cookie->identifier))
+            && (isset($cookie->securitytoken))
+        ) {
+            $authManager = $serviceManager->get(AuthManagerInterface::class);    
+            $securitytoken = $authManager->getRepository()
+                ->findByIdentifier($cookie->identifier);
+            if (! $securitytoken instanceof Securitytoken) {
+                
+                return;
+            }            
+            if (sha1($cookie->securitytoken) != $securitytoken->getToken()) {
+                
+                return;
+            } else {
+                $authAdapter = $authService->getAdapter();
+                $authAdapter->setEmail($securitytoken->getIdentity());
+                $authAdapter->setToken($securitytoken->getToken());
+                $result = $authService->authenticate();
+                if (1 === $result->getCode()) {
+                    // update securitytoken in db and set new cookies
+                    $randomString = Securitytoken::randomString();                
+                    $securitytoken->setToken($randomString);
+                    $authManager->getRepository()->update($securitytoken);                
+                    $cookieToken = new SetCookie(
+                        'securitytoken', $randomString, time()+(3600*24*365), '/'
+                    );
+                    $controller->getResponse()->getHeaders()
+                        ->addHeader($cookieToken);
+                    $cookieIdentifier = new SetCookie(
+                        'identifier', $securitytoken->getIdentifier(),
+                        time()+(3600*24*365), '/'
+                    );
+                    $controller->getResponse()->getHeaders()
+                        ->addHeader($cookieIdentifier);
+                } else {
+                    // delete securitytoken and remove cookies
+                    $authManager->getRepository()->delete($securitytoken);
+                    $cookieToken = new SetCookie(
+                        'securitytoken', $randomString, time()-(3600*24*365), '/'
+                    );
+                    $controller->getResponse()->getHeaders()->addHeader($cookieToken);
+                    $cookieIdentifier = new SetCookie(
+                        'identifier', '', time()-(3600*24*365), '/'
+                    );
+                    $controller->getResponse()->getHeaders()
+                        ->addHeader($cookieIdentifier);
+                }
+            // Redirect the same page and use identity.
+            $locale = $e->getRouteMatch()->getParam('locale');
+            $routeName = $e->getRouteMatch()->getMatchedRouteName();
+                          
+            return $controller->redirect()->toRoute($routeName, [$locale,]);   
             }
-            // add the segment to layout
-            $viewSegment = new ViewModel();
-            $viewSegment->setTemplate($segmentPath);
-            $parts = explode('/', $segmentPath);
-            $segment = end($parts);
-            $viewModel->addChild($viewSegment, $segment);
-        }
+        } 
     }
 }

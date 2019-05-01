@@ -17,4 +17,5 @@ return [
     'layout/segments/footer'     => APPLICATION_MODULE_ROOT . '/view/layout/segments/site-footer.phtml',
     'layout/segments/header'     => APPLICATION_MODULE_ROOT . '/view/layout/segments/site-header.phtml',
     'layout/segments/navigation' => APPLICATION_MODULE_ROOT . '/view/layout/segments/navigation.phtml',
+    'layout/segments/messages'   => APPLICATION_MODULE_ROOT . '/view/layout/segments/messages.phtml',
 ];

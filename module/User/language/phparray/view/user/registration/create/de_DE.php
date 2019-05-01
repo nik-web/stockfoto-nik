@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module translate index index template de_DE
+ * User module translate registration create template de_DE
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,14 +11,17 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace User;
 
 //Individual part of the placeholder
-$path = '_module_application_view_index_index';
+$path = '_module_user_registration_create';
 
 return [
-    'title' . $path                    => 'Stockfotos vom %s',
-    'meta_description_content' . $path => 'Stockfotos vom %s',
-    'meta_keywords_content' . $path    => 'Home, Startseite, Stockfoto, Foto, Bilder, Stockfotografie',
-    'main_heading' . $path             => 'Stockfotos bei %s',
+    'title' . $path                    => 'Die Registrierung bei dieser Webanwendung',
+    'meta_description_content' . $path => 'Die Registrierung bei dieser Webanwendung',
+    'meta_keywords_content' . $path    => 'Registrierung, Nutzer, Daten, Konto',
+    'main_heading' . $path             => 'Registrieren',
+    'form_fieldset_legend' . $path     => 'Ihre Daten',
+    'form_alias_description' . $path   => 'Der Nutzername muss min. drei und max. 128 Zeichen lang sein!',
+    'form_email_description' . $path   => 'Die E-Mail Adresse im Basisformat "local-part@hostname" eingeben!',
 ];

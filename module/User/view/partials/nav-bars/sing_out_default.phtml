@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module view partial meta navigationbar default template
+ * User module view partial sing out navigationbar default template
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,15 +11,12 @@
  * @since      1.0.0
  */
 ?>
-<div id="meta-nav-wrapper">
-    <ul id="meta-nav">
+<div>
+    <ul>
     <?php
-        foreach ($this->container as $page) {
-            if (!$this->navigation('meta_nav')->accept($page)) {
-                continue; 
-            } 
+        foreach ($this->container as $page) { 
     ?>
-        <li class="meta-nav-item">
+        <li>
         <?php
             if ($page->isActive()) {
         ?>
@@ -29,7 +26,7 @@
         <?php
             } else {
         ?>
-            <a class="meta-nav-link" href="<?= $page->getHref() ?>">
+            <a href="<?= $page->getHref() ?>">
                 <?= $this->translate($page->getLabel()) ?>
             </a>
         <?php

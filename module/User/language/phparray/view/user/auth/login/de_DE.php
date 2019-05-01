@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module translate index index template de_DE
+ * User module translate login template de_DE
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,14 +11,17 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace User;
 
 //Individual part of the placeholder
-$path = '_module_application_view_index_index';
+$path = '_module_user_view_auth_login';
 
 return [
-    'title' . $path                    => 'Stockfotos vom %s',
-    'meta_description_content' . $path => 'Stockfotos vom %s',
-    'meta_keywords_content' . $path    => 'Home, Startseite, Stockfoto, Foto, Bilder, Stockfotografie',
-    'main_heading' . $path             => 'Stockfotos bei %s',
+    'title' . $path                      => 'Bei %s anmelden',
+    'meta_description_content' . $path   => 'Bei %s anmelden',
+    'meta_keywords_content' . $path      => 'amelden, Login Nutzer, Benutzer, Webanwendug',
+    'main_heading' . $path               => 'Bei %s anmelden',
+    'form_fieldset_legend' . $path       => 'Login-Daten',
+    'form_email_description' . $path     => 'Ihre E-Mail Adresse im Basisformat "local-part@hostname" eingeben.',
+    'form_password_description' . $path  => 'Ihr aktuelles Passwort eingeben!',
 ];

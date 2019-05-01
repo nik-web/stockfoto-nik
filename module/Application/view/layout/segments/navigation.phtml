@@ -10,12 +10,20 @@
  * @version    1.0.0
  * @since      1.0.0
  */
-$mainNavBar = $this->navigation('main_nav')->menu()
-    ->setPartial('partials/nav-bars/main_default.phtml');
 ?>
 <div id="nav-wrapper">
     <nav id="main-nav">
-        <?= $mainNavBar->render(); ?>
+        <?= $this->navigation('main_nav')->menu()
+            ->setPartial('partials/nav-bars/main_default.phtml')->render(); ?>
+        <?php
+        if ($this->identity()) {
+            echo $this->navigation('sing_out_nav')->menu()
+                ->setPartial('partials/nav-bars/sing_out.phtml')->render();
+        } else {
+            echo $this->navigation('sing_in_nav')->menu()
+                ->setPartial('partials/nav-bars/sing_in.phtml')->render();
+        }
+        ?>
         <?= $this->render('components/locate_nav.phtml')?>
     </nav>
 </div>

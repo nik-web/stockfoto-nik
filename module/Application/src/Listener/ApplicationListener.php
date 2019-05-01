@@ -34,7 +34,7 @@ class ApplicationListener extends AbstractListenerAggregate
     {
         $this->listeners[] = $events->attach(
             MvcEvent::EVENT_ROUTE, 
-            array($this, 'setupLocalization'),
+            [$this, 'setupLocalization'],
             $priority
         );
         // Listen to the "render" event and add layout segments to the view
@@ -54,14 +54,10 @@ class ApplicationListener extends AbstractListenerAggregate
     public function setupLocalization(EventInterface $e)
     {
         $routeMatch = $e->getRouteMatch();
-        
         $locale = $routeMatch->getParam('locale');
-        
         $translator = $e->getApplication()
             ->getServiceManager()->get('MvcTranslator');
-        
         $translator->setFallbackLocale(Data::MY_FALLBACK_LOCALE);
-        
         if (!empty($locale) && in_array ($locale, Data::MY_LOCALES)) {
             Locale::setDefault($locale);
             $translator->setLocale($locale);

@@ -24,13 +24,16 @@ if (1 < $count) {
     foreach ($locales as $locale) {
         if (!null == $this->routeMatch()) {
             $name = $this->routeMatch()->getMatchedRouteName();
+            $params = $this->routeMatch()->getParams();
+            $params['locale'] = $locale; 
         } else {
             $name = 'home';
+            $params = [];
         }
         if ($locale != $this->locale()) {
 ?>
     <li>
-        <a href="<?= $this->url($name, ['locale' => $locale]); ?>">
+        <a href="<?= $this->url($name, $params); ?>">
             <?= $locale ?>
         </a>
     </li>

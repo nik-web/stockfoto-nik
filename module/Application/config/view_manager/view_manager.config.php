@@ -13,12 +13,20 @@
 
 namespace Application;
 
+if (APPLICATION_ENV === 'development') {
+    $display_not_found_reason = true;
+    $display_exceptions       = true;
+} else {
+    $display_not_found_reason = false;
+    $display_exceptions       = false;
+}
+
 $templateMap = include APPLICATION_MODULE_ROOT
     . '/config/view_manager/template_map.config.php';
 
 return [
-    'display_not_found_reason' => false, // controls whether to display the detailed information about the "Page not Found" error
-    'display_exceptions'       => false, // defines whether to display information about an unhandled exception and its stack trace
+    'display_not_found_reason' => $display_not_found_reason, // controls whether to display the detailed information about the "Page not Found" error
+    'display_exceptions'       => $display_exceptions, // defines whether to display information about an unhandled exception and its stack trace
     'doctype'                  => 'HTML5',
     'not_found_template'       => 'error/404', // defines the template name for the 404 error
     'exception_template'       => 'error/index',

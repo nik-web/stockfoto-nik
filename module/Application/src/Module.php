@@ -17,13 +17,17 @@ use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\ModuleManagerInterface;
+use Zend\Session\SessionManager;
 
 /**
  * Application module class
  * 
  * @package Application
  */
-class Module implements InitProviderInterface, ConfigProviderInterface, BootstrapListenerInterface
+class Module
+    implements InitProviderInterface,
+               ConfigProviderInterface,
+               BootstrapListenerInterface
 {
     
     /**
@@ -52,9 +56,14 @@ class Module implements InitProviderInterface, ConfigProviderInterface, Bootstra
         $application = $e->getApplication();
         
         $eventManager = $application->getEventManager();
-        // attach module listener
+        // Attach module listener
         $applicationListener = new ApplicationListener();
         $applicationListener->attach($eventManager); 
         
+        $serviceManager = $application->getServiceManager();
+        // The following line instantiates the SessionManager and automatically
+        // makes the SessionManager the 'default' one.
+        $sessionManager = $serviceManager->get(SessionManager::class);
+        $sessionManager->start();
     }
 }

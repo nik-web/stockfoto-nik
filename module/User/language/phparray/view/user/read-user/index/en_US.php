@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module translate index index template de_DE
+ * User module translate read-user index template en_US
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,14 +11,14 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace User;
 
 //Individual part of the placeholder
-$path = '_module_application_view_index_index';
+$path = '_module_user_view_read-user_index';
 
 return [
-    'title' . $path                    => 'Stockfotos vom %s',
-    'meta_description_content' . $path => 'Stockfotos vom %s',
-    'meta_keywords_content' . $path    => 'Home, Startseite, Stockfoto, Foto, Bilder, Stockfotografie',
-    'main_heading' . $path             => 'Stockfotos bei %s',
+    'title' . $path                    => 'All registered users of %s',
+    'meta_description_content' . $path => 'All registered users of the web application "%s"',
+    'meta_keywords_content' . $path    => 'users, web application,',
+    'main_heading' . $path             => 'All users',
 ];

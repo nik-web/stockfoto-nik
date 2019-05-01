@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module translate index index template de_DE
+ * User module translate not authorized template en_US
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,14 +11,15 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace User;
 
 //Individual part of the placeholder
-$path = '_module_application_view_index_index';
+$path = '_module_user_view_auth_not-authorized';
 
 return [
-    'title' . $path                    => 'Stockfotos vom %s',
-    'meta_description_content' . $path => 'Stockfotos vom %s',
-    'meta_keywords_content' . $path    => 'Home, Startseite, Stockfoto, Foto, Bilder, Stockfotografie',
-    'main_heading' . $path             => 'Stockfotos bei %s',
+    'title' . $path                    => 'No permission for this page',
+    'meta_description_content' . $path => 'You do not have permission for this page',
+    'meta_keywords_content' . $path    => 'not authorized, page',
+    'main_heading' . $path             => 'Not Authorized',
+    'main_heading_paragraph' . $path   => 'You are not authorized to access the page you are looking for',
 ];

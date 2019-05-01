@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module translate navigation configuration de_DE
+ * User module translate navigation configuration ru_RU
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,10 +11,7 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace User;
 
 return [
-    'home_label_main_nav'           => 'Home',
-    'impressum_label_meta_nav'      => 'Impressum',
-    'privacy-policy_label_meta_nav' => 'Datenschutz',
 ];

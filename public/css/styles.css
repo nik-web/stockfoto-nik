@@ -247,6 +247,41 @@ button::-moz-focus-inner,
   padding: 0;
   border: 0; }
 
+fieldset {
+  box-sizing: border-box; }
+  fieldset::before, fieldset::after {
+    box-sizing: border-box; }
+
+form {
+  box-sizing: border-box; }
+  form::before, form::after {
+    box-sizing: border-box; }
+
+input {
+  box-sizing: border-box; }
+  input::before, input::after {
+    box-sizing: border-box; }
+
+label {
+  box-sizing: border-box; }
+  label::before, label::after {
+    box-sizing: border-box; }
+
+legend {
+  box-sizing: border-box; }
+  legend::before, legend::after {
+    box-sizing: border-box; }
+
+option {
+  box-sizing: border-box; }
+  option::before, option::after {
+    box-sizing: border-box; }
+
+select {
+  box-sizing: border-box; }
+  select::before, select::after {
+    box-sizing: border-box; }
+
 a {
   margin: 0;
   border: 0;
@@ -273,6 +308,12 @@ a:hover {
 a:active {
   color: #000;
   text-decoration: underline; }
+
+i {
+  font-style: italic;
+  box-sizing: border-box; }
+  i::before, i::after {
+    box-sizing: border-box; }
 
 small {
   font-size: smaller;
@@ -1060,15 +1101,172 @@ ul {
 
   .offset-xl-11 {
     margin-left: 91.66667%; } }
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/*
-    Created on : 29.01.2019, 09:55:58
-    Author     : nik
-*/
+#main-header {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: .5rem;
+  padding-right: 1rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1rem;
+  background-color: #f5f5f5; }
+  @media (min-width: 768px) {
+    #main-header {
+      padding-top: .75rem;
+      padding-right: 1.5rem;
+      padding-bottom: 2rem;
+      padding-left: 1.5rem; } }
+  @media (min-width: 992px) {
+    #main-header {
+      padding-top: 1rem;
+      padding-right: 1.75rem;
+      padding-bottom: 2.25rem;
+      padding-left: 1.75rem; } }
+
+fieldset {
+  border-color: #ced4da; }
+
+legend {
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #7f7f7f; }
+  @media (min-width: 768px) {
+    legend {
+      font-size: 1.5rem; } }
+  @media (min-width: 992px) {
+    legend {
+      font-size: 1.75rem; } }
+
+.form-elemet-wrapper {
+  padding: .25rem 0 .5rem 0; }
+
+.form-elemet-wrapper-small,
+.form-submit-wrapper {
+  padding: .25rem 1rem .25rem 1rem; }
+
+select,
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 0;
+  margin-top: .5rem;
+  padding-top: .5rem;
+  padding-right: .5rem;
+  padding-bottom: .5rem;
+  padding-left: .5rem; }
+
+select {
+  cursor: pointer; }
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+  height: 2.5rem; }
+
+input[type="text"],
+input[type="password"] {
+  font-size: inherit;
+  font-weight: inherit;
+  color: #000;
+  background-color: #f5f5f5; }
+
+input[type="submit"] {
+  cursor: pointer;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle; }
+
+.multiselect-roles {
+  height: 7.5rem;
+  background-color: #f5f5f5; }
+
+.multiselect-roles option {
+  margin-top: .125 rem;
+  margin-bottom: .125rem;
+  padding-top: .125rem;
+  padding-bottom: .125rem;
+  cursor: pointer; }
+
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border: 1px solid #28a745; }
+
+.btn-success:hover {
+  background-color: #067f22; }
+
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545; }
+
+.btn-danger:hover {
+  background-color: #b71222; }
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff; }
+
+.btn-primary:hover {
+  background-color: #015bbc; }
+
+.help-block {
+  padding: 0;
+  list-style: none;
+  font-size: smaller;
+  font-style: italic;
+  color: #a94442; }
+
+.close-messages {
+  position: absolute;
+  top: 0.125rem;
+  right: -0.125rem;
+  padding: 0.25rem 0.75rem;
+  color: inherit; }
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent; }
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d0e9c6;
+  color: #3c763d; }
+
+.alert-info {
+  background-color: #d9edf7;
+  border-color: #bcdff1;
+  color: #31708f; }
+
+.alert-warning {
+  background-color: #fcf8e3;
+  border-color: #faf2cc;
+  color: #8a6d3b; }
+
+.alert-danger {
+  background-color: #f2dede;
+  border-color: #ebcccc;
+  color: #a94442; }
+
+.alert-default {
+  background-color: #f5f5f5;
+  border-color: #e9ecef; }
+
+.messages-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.messages-list-item {
+  hyphens: auto; }
+
 #site-footer {
   margin-top: 1rem;
   padding-top: 0.5rem;
@@ -1366,6 +1564,22 @@ and open the template in the editor.
 
 .collapse:not(.show) {
   display: none; }
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-bottom: .5rem;
+  margin-left: auto;
+  padding-left: 0;
+  list-style: none; }
+
+.pagination-item {
+  margin-left: .25rem;
+  margin-right: .25rem;
+  padding-left: .25rem;
+  padding-right: .25rem; }
 
 #copyright-notice {
   display: block;

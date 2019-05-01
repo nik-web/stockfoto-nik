@@ -2,7 +2,7 @@
 /** 
  * stockfoto-nik cms
  * 
- * Application module view manager configuration
+ * User module view manager configuration
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,19 +11,14 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace User;
 
-$templateMap = include APPLICATION_MODULE_ROOT
+$templateMap = include USER_MODULE_ROOT
     . '/config/view_manager/template_map.config.php';
 
 return [
-    'display_not_found_reason' => false, // controls whether to display the detailed information about the "Page not Found" error
-    'display_exceptions'       => false, // defines whether to display information about an unhandled exception and its stack trace
-    'doctype'                  => 'HTML5',
-    'not_found_template'       => 'error/404', // defines the template name for the 404 error
-    'exception_template'       => 'error/index',
     'template_map'             => $templateMap,
     'template_path_stack'      => [
-        APPLICATION_MODULE_ROOT . '/view',
+        USER_MODULE_ROOT . '/view',
     ],
 ];

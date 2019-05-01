@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module translate de_DE
+ * User module translate de_DE
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,15 +11,27 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace User;
 
 $locale = 'de_DE';
 
 return array_merge(
     include 'config/navigation/' . $locale . '.php',
-    include 'view/application/index/index/' . $locale . '.php',
-    include 'view/application/index/imprint/' . $locale . '.php',
-    include 'view/application/index/privacy-policy/' . $locale . '.php',
-    include 'view/error/404/' . $locale . '.php',
-    include 'view/error/index/' . $locale . '.php'
+    include 'flash-messanges/' . $locale . '.php',
+    include 'validator-messanges/' . $locale . '.php',
+    include 'form-elements/' . $locale . '.php',
+    include 'view/user/read-user/index/' . $locale . '.php',
+    include 'view/user/read-user/detail/' . $locale . '.php',
+    include 'view/user/read-user/account/' . $locale . '.php',
+    include 'view/user/auth/login/' . $locale . '.php',
+    include 'view/user/auth/not-authorized/' . $locale . '.php',    
+    include 'view/user/write-user/add/' . $locale . '.php',
+    include 'view/user/write-user/change-password/' . $locale . '.php',
+    include 'view/user/write-user/edit/' . $locale . '.php',
+    include 'view/user/write-user/reset-password/' . $locale . '.php',
+    include 'view/user/write-user/set-password/' . $locale . '.php',
+    include 'view/user/delete-user/delete-own/' . $locale . '.php',
+    include 'view/user/delete-user/delete/' . $locale . '.php',
+    include 'view/user/registration/confirm/' . $locale . '.php',
+    include 'view/user/registration/create/' . $locale . '.php'
 );

@@ -11,9 +11,8 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace Application\Controller;
 
-use Application\Controller\IndexController;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return[

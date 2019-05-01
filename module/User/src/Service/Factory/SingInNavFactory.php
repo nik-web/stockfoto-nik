@@ -9,25 +9,25 @@
  * @since      1.0.0
  */
 
-namespace Application\Service\Factory;
+namespace User\Service\Factory;
 
 use Zend\Navigation\Service\AbstractNavigationFactory;
 
 /**
- * BrandNavFactory
+ * SingInNavFactory
  *
- * @package Application
- * @subpackage Application\Service\Factory
+ * @package User
+ * @subpackage User\Service\Factory
  */
-class BrandNavFactory extends AbstractNavigationFactory
+class SingInNavFactory extends AbstractNavigationFactory
 {
     /**
-     * Returns config name of the brand navigation
+     * Returns config name of the sing in navigation
      * 
      * @return string
      */
     public function getName()
     {
-        return 'brand_nav';
+        return 'sing_in_nav';
     }
 }

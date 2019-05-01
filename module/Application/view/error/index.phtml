@@ -23,9 +23,9 @@ $this->headMeta()
     ->appendName('description', $description)
     ->appendName('keywords', $keywords);
 ?>
+
 <h1><?= $this->translate('h1' . $path); ?></h1>
 <h2><?= $this->message; ?></h2>
-
 <?php if (isset($this->display_exceptions) && $this->display_exceptions): ?>
 
 <?php if(isset($this->exception) && $this->exception instanceof Exception): ?>

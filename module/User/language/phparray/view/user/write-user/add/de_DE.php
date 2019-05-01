@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module translate index index template de_DE
+ * User module translate write-user add template de_DE
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,14 +11,19 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace User;
 
 //Individual part of the placeholder
-$path = '_module_application_view_index_index';
+$path = '_module_user_view_write-user_add';
 
 return [
-    'title' . $path                    => 'Stockfotos vom %s',
-    'meta_description_content' . $path => 'Stockfotos vom %s',
-    'meta_keywords_content' . $path    => 'Home, Startseite, Stockfoto, Foto, Bilder, Stockfotografie',
-    'main_heading' . $path             => 'Stockfotos bei %s',
+    'title' . $path                             => 'Einen neuen Nutzer zur Webanwendung hinzufügen',
+    'meta_description_content' . $path          => 'Einen neuen Nutzer zu dieser Webanwendung hinzufügen',
+    'meta_keywords_content' . $path             => 'Nutzer, hinzugügen, Webanwendug',
+    'main_heading' . $path                      => 'Nutzer-Konto anlegen',
+    'form_fieldset_legend' . $path              => 'Nutzer-Daten',
+    'form_alias_description' . $path            => 'Der Nutzername muss min. drei und max. 128 Zeichen lang sein!',
+    'form_email_description' . $path            => 'Die E-Mail Adresse im Basisformat "local-part@hostname" eingeben!',
+    'form_password_description' . $path         => 'Das Passwort muss min. 6 und max. 64 Zeichen lang sein!',
+    'form_confirm_password_description' . $path => 'Die Eingabe des Passworts wiederholen!',
 ];

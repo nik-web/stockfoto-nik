@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module navigation configuration
+ * User module navigation configuration
  * 
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
@@ -12,33 +12,35 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace User;
 
 return[
-    'brand_nav' => [
+    'sing_in_nav' => [
         [
-            'label' => ValueObject\Data::NAME,
-            'route' => 'home',
+            'label' => 'login-user_label_sing_in_nav',
+            'route' => 'login-user',
             'useRouteMatch' => true,
+            'order' => 5,
+        ],
+        [
+            'label' => 'regisration_label_sing_in_nav',
+            'route' => 'registration',
+            'useRouteMatch' => true,
+            'order' => 10,
         ],
     ],
-    'main_nav'  => [
+    'sing_out_nav'  => [
         [
-            'label' => 'home_label_main_nav',
-            'route' => 'home',
+            'label' => 'user-account_label_sing_out_nav',
+            'route' => 'user-account',
             'useRouteMatch' => true,
-        ],
-    ],
-    'meta_nav'  => [
-        [
-            'label' => 'impressum_label_meta_nav',
-            'route' => 'imprint',
-            'useRouteMatch' => true,
+            'order' => 5,
         ],
         [
-            'label' => 'privacy-policy_label_meta_nav',
-            'route' => 'privacy-policy',
+            'label' => 'logout-user_label_sing_out_nav',
+            'route' => 'logout-user',
             'useRouteMatch' => true,
+            'order' => 10,
         ],
     ],
 ];

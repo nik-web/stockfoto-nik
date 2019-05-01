@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module view partial brand default navigation template
+ * Application module view partial pagination control default navigation template
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -10,22 +10,68 @@
  * @version    1.0.0
  * @since      1.0.0
  */
-
-$homePage = $container->findOneBy('route', 'home');
-$istActive = $homePage->isActive();
 ?>
-<?php
-if ($istActive) {
-?> 
-<span id="brand">
-    <?= $homePage ?>
-</span>
-<?php
-} else {
-?>
-<a id="brand" href="<?= $homePage->getHref(); ?>">
-    <?= $homePage ?>
-</a>
-<?php
-}
-?>
+<ul class="pagination">
+<!-- To first page -->
+    <li class="pagination-item">
+<?php if ($this->first != $this->current): ?>
+        <a href="<?= $this->url($this->route, ['locale' => $this->locale(), 'page' => $this->first]); ?>" aria-label="First">
+            &lt;&lt;
+        </a>
+<?php else: ?>
+        <span>
+            &lt;&lt;
+        </span>
+<?php endif; ?>
+    </li>
+<!-- Previous page link -->
+    <li class="pagination-item">
+<?php if (isset($this->previous)): ?>
+        <a href="<?= $this->url($this->route, ['locale' => $this->locale(), 'page' => $this->previous]); ?>" aria-label="Previous">
+            &lt;
+        </a>
+<?php else: ?>
+        <span>
+            &lt;
+        </span>
+<?php endif; ?>
+    </li>
+<!-- Numbered page links -->
+<?php foreach ($this->pagesInRange as $page): ?>
+    <li class="pagination-item">
+    <?php if ($page != $this->current): ?>
+        <a class="page-link" href="<?= $this->url($this->route, ['locale' => $this->locale(), 'page' => $page]); ?>">
+            <?= $page ?>
+        </a>
+<?php else: ?>
+        <span>
+            <?= $page ?>
+        </span>
+<?php endif; ?>
+    </li>
+<?php endforeach; ?>
+<!-- Next page link -->
+    <li class="pagination-item">
+<?php if (isset($this->next)): ?>
+        <a href="<?= $this->url($this->route, ['locale' => $this->locale(), 'page' => $this->next]); ?>" aria-label="Next">
+            &gt;
+        </a>
+<?php else: ?>
+        <span>
+            &gt;
+        </span>  
+<?php endif; ?>
+    </li>
+<!-- Last page link -->
+    <li class="pagination-item">
+<?php if ($this->last !=  $this->current): ?>
+        <a href="<?= $this->url($this->route, ['locale' => $this->locale(), 'page' => $this->last]); ?>" aria-label="Last">            
+            &gt;&gt;
+        </a>
+<?php else: ?>
+        <span>
+            &gt;&gt;
+        </span>
+<?php endif; ?>
+    </li>
+</ul>

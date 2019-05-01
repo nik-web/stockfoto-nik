@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module controllers configuration
+ * User module controllers configuration
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,13 +11,14 @@
  * @since      1.0.0
  */
 
-namespace Application;
-
-use Application\Controller\IndexController;
-use Zend\ServiceManager\Factory\InvokableFactory;
+namespace User\Controller;
 
 return[
     'factories' => [
-        IndexController::class => InvokableFactory::class,
+        RegistrationController::class => Factory\RegistrationControllerFactory::class,
+        ReadUserController::class     => Factory\ReadUserControllerFactory::class,
+        AuthController::class         => Factory\AuthControllerFactory::class,
+        WriteUserController::class    => Factory\WriteUserControllerFactory::class,
+        DeleteUserController::class   => Factory\DeleteUserControllerFactory::class,
     ],
 ];

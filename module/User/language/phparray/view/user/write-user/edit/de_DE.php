@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module translate index index template de_DE
+ * User module translate write-user edit template de_DE
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,14 +11,19 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace User;
 
 //Individual part of the placeholder
-$path = '_module_application_view_index_index';
+$path = '_module_user_view_write-user_edit';
 
 return [
-    'title' . $path                    => 'Stockfotos vom %s',
-    'meta_description_content' . $path => 'Stockfotos vom %s',
-    'meta_keywords_content' . $path    => 'Home, Startseite, Stockfoto, Foto, Bilder, Stockfotografie',
-    'main_heading' . $path             => 'Stockfotos bei %s',
+    'title' . $path                    => 'Daten dieses Nutzers in der Webanwendung bearbeiten',
+    'meta_description_content' . $path => 'Daten dieses Nutzers in der Webanwendung bearbeiten',
+    'meta_keywords_content' . $path    => 'Nutzer, Daten, bearbeiten, Webanwendug',
+    'main_heading' . $path             => 'Nutzerkonto %s - %s bearbeiten',
+    'form_fieldset_legend' . $path     => 'Koto bearbeiten',
+    'form_status_description' . $path  => 'Den Status des Nutzers festlege!',
+    'form_roles_description' . $path   => 'Die Rolle des Nutzers festlegen. Eine Mehrfachauswahl ist möglich.',
+    'link_title' . $path . '_cancel'   => 'Das Bearbeiten des Nutzerkontos abbrechen.',
+    'link' . $path . '_cancel'         => 'Abbrechen',
 ];

@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module translate index index template de_DE
+ * User module translate write-user change-password template de_DE
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,14 +11,19 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace User;
 
 //Individual part of the placeholder
-$path = '_module_application_view_index_index';
+$path = '_module_user_view_write-user_change-password';
 
 return [
-    'title' . $path                    => 'Stockfotos vom %s',
-    'meta_description_content' . $path => 'Stockfotos vom %s',
-    'meta_keywords_content' . $path    => 'Home, Startseite, Stockfoto, Foto, Bilder, Stockfotografie',
-    'main_heading' . $path             => 'Stockfotos bei %s',
+    'title' . $path                             => 'Das Passwort dieses Nutzers ändern',
+    'meta_description_content' . $path          => 'Das Passwort dieses Nutzers in der Webanwendung ändern',
+    'meta_keywords_content' . $path             => 'Nutzer, Daten, Passwort, ändern, Webanwendug',
+    'main_heading' . $path                      => 'Mein Passwort ändern',
+    'form_current_password_description' . $path => 'Geben Sie hier ihr aktuelles Passwort ein!',
+    'form_new_password_description' . $path     => 'Das neue Password muss min. 6 und max. 64 Zeichen lang sein!',
+    'form-confirm-password-description' . $path => 'Die Eingabe des neuen Passworts hier wiederholen!',
+    'link_title' . $path . '_cancel'            => 'Das Ändern des Passworts abbrechen.',
+    'link' . $path . '_cancel'                  => 'Abbrechen',
 ];

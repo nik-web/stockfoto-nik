@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module translate index index template de_DE
+ * User module translate delete-user delete-own template de_DE
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,14 +11,20 @@
  * @since      1.0.0
  */
 
-namespace Application;
+namespace User;
 
 //Individual part of the placeholder
-$path = '_module_application_view_index_index';
+$path = '_module_user_view_delete-user_delete-own';
 
 return [
-    'title' . $path                    => 'Stockfotos vom %s',
-    'meta_description_content' . $path => 'Stockfotos vom %s',
-    'meta_keywords_content' . $path    => 'Home, Startseite, Stockfoto, Foto, Bilder, Stockfotografie',
-    'main_heading' . $path             => 'Stockfotos bei %s',
+    'title' . $path                             => 'Mein Konto bei dieser Webanwendung löschen',
+    'meta_description_content' . $path          => 'Mein Konto und alle meine weiteren Daten bei dieser Webanwendung löschen.',
+    'meta_keywords_content' . $path             => 'Nutzer, Daten, Konto',
+    'main_heading' . $path                      => 'Mein Konto bei %s löschen',
+    'heading_account-data' . $path              => 'Konto-Daten',
+    'label_alias' . $path                       => 'Nutzername:',
+    'label_email' . $path                       => 'E-Mail Adresse:',
+    'label_password' . $path                    => 'Password:',
+    'legend' . $path . '_account_delete'        => 'Konto löschen',
+    'form_current_password_description' . $path => 'Das Passwort muss min. 6 und max. 64 Zeichen lang sein!',
 ];

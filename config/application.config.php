@@ -52,4 +52,5 @@ return [
         // The path in which to cache merged configuration.
         'cache_dir' => 'data/cache/',
     ],
+    
 ];

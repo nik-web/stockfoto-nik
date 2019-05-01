@@ -34,6 +34,7 @@ $templateMap = [
     'partials/nav-bars/brand_default.phtml'   => $viewPathPartials . 'nav-bars/brand_default.phtml',
     'partials/nav-bars/main_default.phtml'    => $viewPathPartials . 'nav-bars/main_default.phtml',
     'partials/nav-bars/meta_default.phtml'    => $viewPathPartials . 'nav-bars/meta_default.phtml',
+    'partials/nav-bars/pagination_control_default.phtml' => $viewPathPartials . 'nav-bars/pagination_control_default.phtml',
     'components/application_owner_data.phtml' => $viewPathCompoents . 'application_owner_data.phtml',
     'components/locate_nav.phtml'             => $viewPathCompoents . 'locate_nav.phtml',
 ];

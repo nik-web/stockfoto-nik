@@ -23,7 +23,7 @@ $keywords = $this->translate('meta_keywords_content' . $path);
 $this->headMeta()->appendName('description', $description)
     ->appendName('keywords', $keywords);
 ?>
-<header>
+<header id="main-header">
     <h1>
         <?= sprintf($this->translate('main_heading' . $path), $applicationName) ?>
     </h1>

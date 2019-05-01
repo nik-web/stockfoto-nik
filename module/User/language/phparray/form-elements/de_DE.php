@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * Application module translate index index template de_DE
+ * User module translate form elemets de_DE
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
@@ -11,14 +11,25 @@
  * @since      1.0.0
  */
 
-namespace Application;
-
-//Individual part of the placeholder
-$path = '_module_application_view_index_index';
+namespace User;
 
 return [
-    'title' . $path                    => 'Stockfotos vom %s',
-    'meta_description_content' . $path => 'Stockfotos vom %s',
-    'meta_keywords_content' . $path    => 'Home, Startseite, Stockfoto, Foto, Bilder, Stockfotografie',
-    'main_heading' . $path             => 'Stockfotos bei %s',
+    'user_alias_label'                => 'Nutzername*',
+    'user_email_label'                => 'E-Mail Adresse*',
+    'user_password_label'             => 'Passwort*',
+    'user_remember_me_label'          => 'Angemeldet bleiben',
+    'user_confirm_password_label'     => 'Passwort bestätigen*',
+    'user_submit_value_sing-in'       => 'Einloggen',
+    'user_submit_value_add-user'      => 'Anlegen',
+    'user_current_password_label'     => 'Aktuelles Passwort*',
+    'user_new_password_label'         => 'Neues Passwort*',
+    'user_confirm_new_password_label' => 'Neues Passwort wiederholen*',
+    'user_status_label'               => 'Nutzer-Status',
+    'user_roles_label'                => 'Role(s)',
+    'user_submit_value_save'          => 'Speichern',
+    'user_submit_value_submit'        => 'Absenden',
+    'user_submit_value_registration'  => 'Registrieren',
+    'user_submit_value_request'       => 'Anfordern',
+    'user_submit_value_confirm'       => 'Bestätigen',
+    'user_submit_value_cancel'        => 'Abbrechen',
 ];

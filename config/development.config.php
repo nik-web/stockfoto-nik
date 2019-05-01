@@ -23,8 +23,4 @@ return [
         'config_cache_enabled' => false,
         'module_map_cache_enabled' => false,
     ],
-    'view_manager' => [
-        'display_not_found_reason' => true, // controls whether to display the detailed information about the "Page not Found" error
-        'display_exceptions'       => true, // defines whether to display information about an unhandled exception and its stack trace
-    ],
 ];
