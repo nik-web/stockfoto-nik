@@ -1,0 +1,27 @@
+//
+// Pagination control
+//
+// Used for pagination control default navigation template
+// HTML-element <ul> <li> <span> <a>
+//
+// Created on : 28.04.2019, 12:29:30
+// Author     : nik
+
+// Pagination list class
+.pagination {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-bottom: .5rem;
+    margin-left: auto;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pagination-item {
+    margin-left: .25rem;
+    margin-right: .25rem;
+    padding-left: .25rem;
+    padding-right: .25rem;
+}

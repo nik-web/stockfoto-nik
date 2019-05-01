@@ -1,0 +1,16 @@
+//
+// The HTML <figcaption> element represents a caption or legend for the rest of
+// the contents its parent <figure> element, if any.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption
+//
+//
+// Created on : 22.01.2019, 07:38:20
+// Author     : nik
+
+@if $enable-abstracts-base-elements-figcaption == true {
+    figcaption {
+        display: block;
+        @include set-box-sizing-border-box;
+    }
+}

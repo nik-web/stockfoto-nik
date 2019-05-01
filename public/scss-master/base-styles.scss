@@ -1,0 +1,33 @@
+//
+// stockfoto-nik cms
+// 
+// Create file base-styles.css with SASS
+//  
+// @author     Niklaus Höpfner <editor@nik-web.net>
+// @link       https://github.com/nik-web/base-application
+// @license    http://opensource.org/licenses/MIT The MIT License (MIT)
+// @version    1.0.0
+// @since      1.0.0
+//
+//
+//  Created on : 12.03.2019, 10:00:49
+//  Author     : nik
+
+// Import mixins
+@import 'utilities/mixins/global',
+        'utilities/mixins/grid';
+
+// Import globale variables
+@import 'variables/global';
+
+// Import master base variables
+@import 'variables/base';
+        
+// Import master functions
+@import 'utilities/functions/grid';
+
+// Enable base styles to this project style variant
+@import 'variants/base-styles/variables/overwrite-base-config';
+
+// Base
+@import 'abstracts/base';

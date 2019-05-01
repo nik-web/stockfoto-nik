@@ -1,0 +1,13 @@
+//
+// <dl>: description list html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl
+//
+// Created on : 22.01.2019, 07:32:55
+// Author     : nik
+
+@if $enable-abstracts-base-elements-dl == true {
+    dl {
+        @include set-box-sizing-border-box;
+    }
+}

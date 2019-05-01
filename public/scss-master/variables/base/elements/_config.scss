@@ -1,0 +1,119 @@
+//
+// Default configuration of all htlm elements grouped by function
+//
+// Created on : 23.01.2019, 08:11:47
+// Author     : nik
+
+// Base content-sectioning elements
+$enable-abstracts-base-elements-address: false !default;
+$enable-abstracts-base-elements-article: false !default;
+$enable-abstracts-base-elements-aside: false !default;
+$enable-abstracts-base-elements-footer: false !default;
+$enable-abstracts-base-elements-header: false !default;
+$enable-abstracts-base-elements-headings: false !default;
+$enable-abstracts-base-elements-hgroup: false !default;
+$enable-abstracts-base-elements-main: false !default;
+$enable-abstracts-base-elements-nav: false !default;
+$enable-abstracts-base-elements-section: false !default;
+
+// Base demarcating-edits elements
+$enable-abstracts-base-elements-del: false !default;
+$enable-abstracts-base-elements-ins: false !default;
+
+// Base embedded-content elements
+$enable-abstracts-base-elements-embed: false !default;
+$enable-abstracts-base-elements-iframe: false !default;
+$enable-abstracts-base-elements-object: false !default;
+$enable-abstracts-base-elements-param: false !default;
+$enable-abstracts-base-elements-source: false !default;
+
+// Base forms elemets
+$enable-abstracts-base-elements-button: false !default;
+$enable-abstracts-base-elements-datalist: false !default;
+$enable-abstracts-base-elements-fieldset: false !default;
+$enable-abstracts-base-elements-form: false !default;
+$enable-abstracts-base-elements-input: false !default;
+$enable-abstracts-base-elements-label: false !default;
+$enable-abstracts-base-elements-legend: false !default;
+$enable-abstracts-base-elements-meter: false !default;
+$enable-abstracts-base-elements-optgroup: false !default;
+$enable-abstracts-base-elements-option: false !default;
+$enable-abstracts-base-elements-output: false !default;
+$enable-abstracts-base-elements-progress: false !default;
+$enable-abstracts-base-elements-select: false !default;
+$enable-abstracts-base-elements-textarea: false !default;
+
+// Base image and multimedia elements
+$enable-abstracts-base-elements-area: false !default;
+$enable-abstracts-base-elements-audio: false !default;
+$enable-abstracts-base-elements-img: false !default;
+$enable-abstracts-base-elements-map: false !default;
+$enable-abstracts-base-elements-picture: false !default;
+$enable-abstracts-base-elements-svg: false !default;
+$enable-abstracts-base-elements-track: false !default;
+$enable-abstracts-base-elements-video: false !default;
+
+// Base inline text semantics elements
+$enable-abstracts-base-elements-a: false !default;
+$enable-abstracts-base-elements-abbr: false !default;
+$enable-abstracts-base-elements-b: false !default;
+$enable-abstracts-base-elements-bdi: false !default;
+$enable-abstracts-base-elements-bdo: false !default;
+$enable-abstracts-base-elements-br: false !default;
+$enable-abstracts-base-elements-cite: false !default;
+$enable-abstracts-base-elements-code: false !default;
+$enable-abstracts-base-elements-data: false !default;
+$enable-abstracts-base-elements-dfn: false !default;
+$enable-abstracts-base-elements-em: false !default;
+$enable-abstracts-base-elements-i: false !default;
+$enable-abstracts-base-elements-kbd: false !default;
+$enable-abstracts-base-elements-mark: false !default;
+$enable-abstracts-base-elements-q: false !default;
+$enable-abstracts-base-elements-samp: false !default;
+$enable-abstracts-base-elements-small: false !default;
+$enable-abstracts-base-elements-span: false !default;
+$enable-abstracts-base-elements-strong: false !default;
+$enable-abstracts-base-elements-sub: false !default;
+$enable-abstracts-base-elements-sup: false !default;
+$enable-abstracts-base-elements-time: false !default;
+$enable-abstracts-base-elements-u: false !default;
+$enable-abstracts-base-elements-var: false !default;
+$enable-abstracts-base-elements-wbr: false !default;
+
+// Base interactive elemets
+$enable-abstracts-base-elements-details: false !default;
+$enable-abstracts-base-elements-menu: false !default;
+$enable-abstracts-base-elements-summary: false !default;
+
+// Base main root element (document)
+$enable-abstracts-base-elements-document: false !default;
+
+// Base sectioning root element
+$enable-abstracts-base-elements-body: false !default;
+
+// Base table content elements
+$enable-abstracts-base-elements-caption: false !default;
+$enable-abstracts-base-elements-col: false !default;
+$enable-abstracts-base-elements-colgroup: false !default;
+$enable-abstracts-base-elements-table: false !default;
+$enable-abstracts-base-elements-tbody: false !default;
+$enable-abstracts-base-elements-td: false !default;
+$enable-abstracts-base-elements-tfoot: false !default;
+$enable-abstracts-base-elements-th: false !default;
+$enable-abstracts-base-elements-thead: false !default;
+$enable-abstracts-base-elements-tr: false !default;
+
+// Base text content elements
+$enable-abstracts-base-elements-blockquote: false !default;
+$enable-abstracts-base-elements-dd: false !default;
+$enable-abstracts-base-elements-div: false !default;
+$enable-abstracts-base-elements-dl: false !default;
+$enable-abstracts-base-elements-dt: false !default;
+$enable-abstracts-base-elements-figure: false !default;
+$enable-abstracts-base-elements-figcaption: false !default;
+$enable-abstracts-base-elements-hr: false !default;
+$enable-abstracts-base-elements-li: false !default;
+$enable-abstracts-base-elements-ol: false !default;
+$enable-abstracts-base-elements-p: false !default;
+$enable-abstracts-base-elements-pre: false !default;
+$enable-abstracts-base-elements-ul: false !default;

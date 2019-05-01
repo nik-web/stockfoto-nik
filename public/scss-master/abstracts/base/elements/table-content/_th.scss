@@ -1,0 +1,14 @@
+//
+// The HTML <th> element defines a cell as header of a group of table cells.
+//
+// The exact nature of this group is defined by the scope and headers attributes.
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th
+//
+// Created on : 22.01.2019, 06:42:00
+// Author     : nik
+
+@if $enable-abstracts-base-elements-th == true {
+    th {
+        @include set-box-sizing-border-box;
+    }
+}

@@ -1,0 +1,13 @@
+//
+// The HTML <map> element is used with <area> elements to define an image map (a clickable link area).
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map
+//
+// Created on : 21.01.2019, 12:51:51
+// Author     : nik
+
+@if $enable-abstracts-base-elements-map == true {
+    map {
+        @include set-box-sizing-border-box;
+    }
+}

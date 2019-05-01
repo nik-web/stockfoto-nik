@@ -1,0 +1,13 @@
+//
+// <tfoot>: table foot html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot
+//
+// Created on : 22.01.2019, 06:37:20
+// Author     : nik
+
+@if $enable-abstracts-base-elements-tfoot == true {
+    tfoot {
+        @include set-box-sizing-border-box;
+    }
+}

@@ -1,0 +1,32 @@
+//
+// nik-test
+//
+// Main content header component
+// Only once on each page use html id attribute
+// 
+// Use html-elements:  <header>
+//
+// Created on : 21.04.2019, 09:29:29
+// Author     : nik
+
+#main-header {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: .5rem;
+    padding-right: 1rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1rem;
+    background-color: $main-content-header-bg;
+    @include media-breakpoint-up(md) {
+        padding-top: .75rem;
+        padding-right: 1.5rem;
+        padding-bottom: 2rem;
+        padding-left: 1.5rem;
+    }
+    @include media-breakpoint-up(lg) {
+        padding-top: 1rem;
+        padding-right: 1.75rem;
+        padding-bottom: 2.25rem;
+        padding-left: 1.75rem;   
+    }
+}

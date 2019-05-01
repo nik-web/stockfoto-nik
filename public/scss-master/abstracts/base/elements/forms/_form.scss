@@ -1,0 +1,14 @@
+//
+// The HTML <form> element represents a document section that contains
+// interactive controls for submitting information to a web server.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+//
+// Created on : 21.01.2019, 10:33:04
+// Author     : nik
+
+@if $enable-abstracts-base-elements-form == true {
+    form {
+        @include set-box-sizing-border-box;
+    }
+}

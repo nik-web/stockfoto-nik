@@ -1,0 +1,13 @@
+//
+// The HTML <colgroup> element defines a group of columns within a table.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup
+//
+// Created on : 22.01.2019, 06:26:31
+// Author     : nik
+
+@if $enable-abstracts-base-elements-colgroup == true {
+    colgroup {
+        @include set-box-sizing-border-box;
+    }
+}

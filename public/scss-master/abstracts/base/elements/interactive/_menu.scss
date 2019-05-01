@@ -1,0 +1,17 @@
+//
+// <menu>: html element
+//
+// The HTML <menu> element represents a group of commands that a user can
+// perform or activate.
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu
+//
+// experimental technology
+//
+// Created on : 21.01.2019, 13:03:41
+// Author     : nik
+
+@if $enable-abstracts-base-elements-menu == true {
+    menue {
+        @include set-box-sizing-border-box;
+    }
+}

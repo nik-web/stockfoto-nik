@@ -1,0 +1,14 @@
+//
+// The HTML Output element (<output>) is a container element into which a site or
+// app can inject the results of a calculation or the outcome of a user action.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output
+//
+// Created on : 21.01.2019, 12:32:16
+// Author     : nik
+
+@if $enable-abstracts-base-elements-output == true {
+    output {
+        @include set-box-sizing-border-box;
+    }
+}

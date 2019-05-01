@@ -1,0 +1,313 @@
+//
+// Dafault partials navigation bars
+//
+// brand navigation bar
+//
+//
+// Created on : 15.01.2019, 14:11:19
+// Updated on : 12.01.2019, 09:26
+// Author     : nikUsed
+
+//
+// Mixin for navigation list items
+//
+@mixin nav-list-item($if-dropdown: false) {
+    margin-bottom: .25rem;
+    padding: 0;
+    border-bottom: 1px dotted $nav-link-color;
+    & > a,
+    & > span {
+        display: inline-block;
+        width: 100%;
+        padding: 0 0.5rem .25rem 0.5rem;
+        color: $nav-link-color;
+    }
+    & > a {
+        &:hover,
+        &:active,
+        &:focus {
+            outline-color: transparent;
+            color: $nav-link-color-selected;
+            text-decoration: none;
+        }  
+    }
+    &:last-child {
+        border-bottom: none;
+    }
+    @include media-breakpoint-up($main-nav-breakpoint) {
+        margin-bottom: 0;
+        margin-right: .5rem;
+        border-bottom: none;      
+    }
+    @if ($if-dropdown == true) {
+        & {
+            position: relative;
+        }
+        & > a:hover {
+            color: $nav-link-color-selected !important;
+        }
+    }
+}
+
+//
+// Mixin for navigation dropdown list items
+//
+@mixin dropdown-item {
+    margin: 0 0 .25rem 0;
+    padding: 0 1rem .25rem 1rem;
+    border-bottom: 1px dotted $nav-link-color;
+    font-weight: $dropdown-item-font-weight;
+    & > a,
+    & > span {
+        display: inline-block;
+        width: 100%;
+        color: $nav-link-color;
+    }
+    & > a {
+        &:hover,
+        &:active,
+        &:focus {
+            outline-color: transparent;
+            color: $nav-link-color-selected;
+            text-decoration: none;
+        }  
+    }
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+//
+// Brand nav-bar for site logo, project, or site names
+// HTML-element <span> or <a>
+//
+#brand {
+    display: inline-block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: $brand-font-size;
+    font-weight: $brand-font-weight;
+    font-family: $brand-font-family;
+    line-height: $brand-line-height;
+    color: $brand-color !important;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+//
+// Main navigation toggler
+//
+// <button> html-element, type="button"
+//
+// Button for toggling the navbar when in its collapsed state
+//
+#main-nav-toggler {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    z-index: 1000;
+    padding: .125rem;
+    font-size: 1rem;
+    line-height: 1;
+    color: $nav-link-color;
+    background-color: $nav-link-color;
+    border: 1px solid $nav-link-color;
+    border-radius: 2px;
+    border
+    &:hover,
+    &:active,
+    &:focus {
+        outline-color: transparent;
+    }
+    @include media-breakpoint-up($main-nav-breakpoint) {
+        display: none;        
+    }
+}
+
+//
+// Main navigation toggler icon
+//
+// <span> html-element
+//
+#main-nav-toggler-icon {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;    
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+//
+// Navbar nav list wrapper
+//
+// <div> html-element
+// 
+#main-nav-list-wrapper {
+    width: 100%;
+    margin-top: 2.8rem;
+    @include media-breakpoint-up($main-nav-breakpoint) {
+        display: flex !important;
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+}
+
+//
+// Navbar nav list
+//
+// <ul> html-element
+//
+#main-nav-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    @include media-breakpoint-up($main-nav-breakpoint) {
+        flex-direction: row;
+        margin: 0;
+        padding-right: 100px;
+    }
+}
+
+//
+// Nav list item
+//
+// <li> html-element
+//
+.main-nav-list-item {
+    @include nav-list-item();
+}
+
+//
+// Nav list item dropdown
+//
+// <li> html-element
+//
+.main-nav-list-item-dropdown {
+    @include nav-list-item(true);
+}
+
+//
+// Always use this class name for script!
+//
+// <ul> html-element
+//
+.dropdown-menu {
+    display: none;
+    position: static;
+    float: none;
+    background-color: $nav-dropdown-bg;
+    list-style: none;
+    padding: .5rem 0 0 0; // remove default ul style
+    border: 1px dotted $nav-link-color;
+    background-clip: padding-box;
+    min-width: 100%;
+    &.show {
+        display: block;
+    }
+    @include media-breakpoint-up($main-nav-breakpoint) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1500;
+        float: left;
+        min-width: 270px;
+    }
+}
+
+//
+// Dropdown-item
+//
+// <li> html element
+//
+.dropdown-item {
+    @include dropdown-item;
+}
+
+//
+// Meta nav wrapper container
+//
+// <div> element
+
+#meta-nav-wrapper {
+    @include make-container();
+    @include make-container-max-widths();
+    padding-top: .5rem;
+    padding-bottom: .25rem;
+}
+
+//
+// Navbar list
+//
+// <ul> element
+
+#meta-nav {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    list-style: none;
+    line-height: $line-height-meta-nav;
+    @include media-breakpoint-up($meta-nav-breakpoint) {
+        flex-direction: row;
+        justify-content: center;
+        max-width: 100%;
+        margin: 0;  
+    }
+}
+
+//
+// Navbar list item
+//
+// <li> element
+
+.meta-nav-item {
+    margin-bottom: .25rem;
+    padding: 0 1rem .25rem 1rem;
+    border-bottom: 1px dotted $nav-link-color;
+    &:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+    @include media-breakpoint-up($meta-nav-breakpoint) {
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+    
+    //
+    // Meta nav link
+    //
+    // <a> element
+    
+    .meta-nav-link {
+        color: $nav-link-color;
+    }
+    
+    .meta-nav-link:hover,
+    .meta-nav-linkactive,
+    .meta-nav-link:focus {
+        text-decoration: none;
+        color: $nav-link-color-selected;
+        outline-color: transparent;
+    }
+}
+
+//
+// Set bei PHP
+//
+.active {
+    color: $light-active-color !important;
+}
+
+//
+// Use Bootstrap Collapse
+//
+.collapse {
+  &:not(.show) {
+    display: none;
+  }
+}

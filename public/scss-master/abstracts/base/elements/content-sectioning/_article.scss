@@ -1,0 +1,30 @@
+//
+// HTML element article
+//
+// The article element represents a section of content that forms an independent
+// part of a document or site; for example, a magazine or newspaper article, or
+// a blog entry.
+// https://www.w3.org/TR/2012/WD-html-markup-20121025/article.html#article
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
+//
+// 1. Eric Meyer’s “Reset CSS” 2.0
+// 2. Render these used elements consistently in IE.
+// 3. Change from `box-sizing: content-box` so that `width` is not affected
+//
+// Enable default false
+//
+// Created on : 12.01.2019, 10:03:51
+// Author     : nik
+
+@if $enable-abstracts-base-elements-article == true {
+    article {
+        display: block; // 2
+        margin-top: 0; // 1
+        margin-right: 0; //
+        margin-bottom: 0; //
+        border: 0; // 1
+        padding: 0; // 1
+        vertical-align: baseline; // 1
+        @include set-box-sizing-border-box; // 3
+    }
+}

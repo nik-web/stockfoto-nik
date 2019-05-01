@@ -1,0 +1,22 @@
+//
+// Brand
+//
+// Used for site logo, project, or site names
+// HTML-element <span> or <a>
+//
+// Created on : 15.01.2019, 14:11:19
+// Updated on : 12.01.2019, 09:26
+// Author     : nik
+
+#brand {
+    display: inline-block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: $brand-font-size;
+    font-weight: $brand-font-weight;
+    font-family: $brand-font-family;
+    line-height: $brand-line-height;
+    color: $brand-color !important;
+    white-space: nowrap;
+    text-decoration: none;
+}

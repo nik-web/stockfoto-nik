@@ -1,0 +1,13 @@
+//
+// HTML Inline Frame element (<iframe>)
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+//
+// Created on : 23.01.2019, 08:58:00
+// Author     : nik
+
+@if $enable-abstracts-base-elements-iframe == true {
+    iframe {
+        @include set-box-sizing-border-box;
+    }
+}

@@ -1,0 +1,30 @@
+//
+// HTML element section
+//
+// The section element represents a section of a document, typically with a
+// title or heading.
+// https://www.w3.org/TR/2012/WD-html-markup-20121025/section.html#section
+// 
+// 1. Eric Meyer’s “Reset CSS” 2.0
+// 2. Render these used elements consistently in IE.
+// 3. Change from `box-sizing: content-box` so that `width` is not affected
+//
+// Enable default false
+//
+// Created on : 12.01.2019, 09:44:22
+// Author     : nik
+
+@if $enable-abstracts-base-elements-section == true {
+    section{
+        display: block; // 2
+        margin: 0; // 1
+        //margin-top: 0;
+        //margin-right: 0;
+        //margin-bottom: 0;
+        //margin-left: 0;
+        border: 0; // 1
+        padding: 0; // 1
+        vertical-align: baseline; // 1
+        @include set-box-sizing-border-box; // 3
+    }
+}

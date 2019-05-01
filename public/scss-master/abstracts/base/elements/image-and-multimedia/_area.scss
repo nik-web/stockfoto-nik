@@ -1,0 +1,13 @@
+//
+// The HTML <area> element defines a hot-spot region on an image, and optionally associates it with a hypertext link. This element is used only within a <map> element.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area
+//
+// Created on : 21.01.2019, 12:52:32
+// Author     : nik
+
+@if $enable-abstracts-base-elements-area == true {
+    area {
+        @include set-box-sizing-border-box;
+    }
+}

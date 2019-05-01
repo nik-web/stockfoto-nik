@@ -1,0 +1,13 @@
+//
+// HTML <embed> element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed
+//
+// Created on : 23.01.2019, 08:57:12
+// Author     : nik
+
+@if $enable-abstracts-base-elements-embed == true {
+    embed {
+        @include set-box-sizing-border-box;
+    }
+}

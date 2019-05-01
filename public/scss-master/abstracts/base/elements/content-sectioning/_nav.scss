@@ -1,0 +1,32 @@
+//
+// HTML element nav
+//
+// The nav element represents a section of a document that links to other
+// documents or to parts within the document itself; that is, a section of
+// navigation links.
+//
+// Default css values
+// https://www.w3schools.com/cssref/css_default_values.asp
+// display: block;
+// 
+// 1. Eric Meyer’s “Reset CSS” 2.0
+// 2. Render these used elements consistently in IE.
+// 3. Change from `box-sizing: content-box` so that `width` is not affected
+//
+// Use the element only once on one page for the main navigation.
+// Enable default true
+//
+// Created on : 12.01.2019, 08:42:35
+// Updated on : 11.02.2019, 09:47
+// Author     : nik
+
+@if $enable-abstracts-base-elements-nav == true {
+    nav {
+        display: block; // 2 (default)
+        margin: 0; // 1
+        border: 0; // 1
+        padding: 0; // 1
+        vertical-align: baseline; // 1
+        @include set-box-sizing-border-box; // 3
+    }
+}

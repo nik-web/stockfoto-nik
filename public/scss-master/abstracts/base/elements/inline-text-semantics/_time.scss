@@ -1,0 +1,13 @@
+//
+// The HTML <time> element represents a specific period in time. 
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time
+//
+// Created on : 22.01.2019, 11:53:05
+// Author     : nik
+
+@if $enable-abstracts-base-elements-time == true {
+    time {
+        @include set-box-sizing-border-box;
+    }
+}

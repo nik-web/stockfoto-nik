@@ -1,0 +1,60 @@
+//
+// The document element
+//
+// The html element represents the root of a document.
+// https://www.w3.org/TR/2012/WD-html-markup-20121025/html.html#html
+//
+// Default css values
+// https://www.w3schools.com/cssref/css_default_values.asp
+// display: block;
+//
+// 1. Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`.
+// 2. Responsive sticky footer
+// 3. Correct the line height in all browsers.
+// 4. Change the default font family in all browsers.
+// 5. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
+// https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
+// 6. Setting @viewport causes scrollbars to overlap content in IE11 and Edge, so
+//    we force a non-overlapping, non-auto-hiding scrollbar to counteract.
+// 7. Change the default tap highlight to be completely transparent in iOS. ( Non-standard )
+// https://developer.mozilla.org/de/docs/Web/CSS/-webkit-tap-highlight-color
+//
+// Element is always present
+//
+// Created on : 22.12.2018, 16:24:05
+// Updated on : 10.02.2018, 10:46
+// Author     : nik
+
+@if $enable-abstracts-base-elements-document == true {
+    html {
+        display: block; // default
+        height: 100%; // 2
+        margin: 0;
+        border: 0;
+        padding: 0;
+        font-size: 100%;
+        line-height: $document-line-height; // 3
+        font-family: $document-font-family; // 4
+        vertical-align: baseline;
+        -moz-text-size-adjust: 100%; // 5
+        -webkit-text-size-adjust: 100%; // 5
+        -ms-text-size-adjust: 100%; // 5
+        -ms-overflow-style: scrollbar; // 6
+        //-webkit-tap-highlight-color: rgba(0, 0, 0, 0); // 7
+        @include set-box-sizing-border-box; // 1 
+    }
+
+     html:focus {
+        outline: none;
+     }
+
+    //
+    // IE10+ doesn't honor `<meta name="viewport">` in some cases.
+    //
+    @at-root {
+        @-ms-viewport {
+            width: device-width;
+        }
+    }
+}
+

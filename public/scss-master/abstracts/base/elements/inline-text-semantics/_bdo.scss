@@ -1,0 +1,13 @@
+//
+// <bdo>: bidirectional text override html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdo
+//
+// Created on : 22.01.2019, 10:56:20
+// Author     : nik
+
+@if $enable-abstracts-base-elements-bdo == true {
+    bdo {
+        @include set-box-sizing-border-box;
+    }
+}

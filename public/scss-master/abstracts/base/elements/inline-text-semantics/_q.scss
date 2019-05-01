@@ -1,0 +1,18 @@
+//
+// <q>: inline quotation element
+//
+// The HTML <q> element indicates that the enclosed text is a short inline quotation.
+// Most modern browsers implement this by surrounding the text in quotation marks.
+// This element is intended for short quotations that don't require paragraph breaks; for long quotations use the <blockquote> element.
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q
+//
+// 1. remove quotation marks
+//
+// Created on : 22.01.2019, 11:37:55
+// Author     : nik
+
+@if $enable-abstracts-base-elements-q == true {
+    q {
+        @include set-box-sizing-border-box; // 1
+    }
+}

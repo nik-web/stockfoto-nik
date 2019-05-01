@@ -1,0 +1,13 @@
+//
+// <tr>: table row html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr
+//
+// Created on : 22.01.2019, 06:37:50
+// Author     : nik
+
+@if $enable-abstracts-base-elements-tr == true {
+    tr {
+        @include set-box-sizing-border-box;
+    }
+}

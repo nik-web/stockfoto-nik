@@ -1,0 +1,13 @@
+//
+// HTML <object> element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object
+//
+// Created on : 23.01.2019, 08:59:54
+// Author     : nik
+
+@if $enable-abstracts-base-elements-object == true {
+    object {
+        @include set-box-sizing-border-box;
+    }
+}

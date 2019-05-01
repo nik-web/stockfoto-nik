@@ -1,0 +1,128 @@
+//
+// nik-test
+//
+// Form-elements 
+// 
+// Use html-elements: <form>, <fieldset>, <input>, <label>, <legend>, <ul>, <li>
+//
+// Created on : 23.04.2019, 11:02:11
+// Author     : nik
+
+fieldset{
+    border-color: #ced4da;
+}
+
+legend {
+    font-weight: $headings-font-weight;
+    font-size: $body-font-size * 1.25;
+    color: $headings-color;
+    @include media-breakpoint-up(md) {
+        font-size: $body-font-size * 1.5;
+    }
+    @include media-breakpoint-up(lg) {
+        font-size: $body-font-size * 1.75;
+    }
+}
+
+// Wrapper with fieldset
+.form-elemet-wrapper {
+    padding: .25rem 0 .5rem 0;
+}
+
+.form-elemet-wrapper-small,
+.form-submit-wrapper {
+    padding: .25rem 1rem .25rem 1rem;
+}
+
+select,
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+    margin-top: .5rem;
+    padding-top: .5rem;
+    padding-right: .5rem;
+    padding-bottom: .5rem;
+    padding-left: .5rem;
+}
+
+select {
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    height: 2.5rem;
+}
+
+input[type="text"],
+input[type="password"] {
+    font-size: inherit;
+    font-weight: inherit;
+    color: #000;
+    background-color: #f5f5f5;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    font-size: inherit;
+    font-weight: inherit;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.multiselect-roles {
+    height: 7.5rem;
+    background-color: #f5f5f5;
+}
+
+.multiselect-roles option {
+    margin-top: .125 rem;
+    margin-bottom: .125rem;
+    padding-top: .125rem;
+    padding-bottom: .125rem;
+    cursor: pointer;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.btn-success:hover {
+    background-color: #067f22;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #b71222;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #015bbc;
+}
+
+.help-block {
+    padding: 0;
+    list-style: none;
+    font-size: smaller;
+    font-style: italic;
+    color: $alert-danger-color
+}

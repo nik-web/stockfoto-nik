@@ -1,0 +1,37 @@
+//
+// Add inline text semantics html-elements
+//
+// Use the HTML inline text semantic to define the meaning, structure, orstyle
+// of a word, line, or any arbitrary piece of text.
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Inline_text_semantics
+//
+// The html element ruby is not used
+// The html element br is not used
+//
+// Created on : 22.01.2019, 08:07:34
+// Author     : nik
+
+@import 'inline-text-semantics/a',
+        'inline-text-semantics/abbr',
+        'inline-text-semantics/b',
+        'inline-text-semantics/bdi',
+        'inline-text-semantics/bdo',
+        'inline-text-semantics/cite',
+        'inline-text-semantics/code',
+        'inline-text-semantics/data',
+        'inline-text-semantics/dfn',
+        'inline-text-semantics/em',
+        'inline-text-semantics/i',
+        'inline-text-semantics/kbd',
+        'inline-text-semantics/mark',
+        'inline-text-semantics/q',
+        'inline-text-semantics/samp',
+        'inline-text-semantics/small',
+        'inline-text-semantics/span',
+        'inline-text-semantics/strong',
+        'inline-text-semantics/sub',
+        'inline-text-semantics/sup',
+        'inline-text-semantics/time',
+        'inline-text-semantics/u',
+        'inline-text-semantics/var',
+        'inline-text-semantics/wbr';

@@ -1,0 +1,13 @@
+//
+// <dt>: description term html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt
+//
+// Created on : 22.01.2019, 07:33:39
+// Author     : nik
+
+@if $enable-abstracts-base-elements-dt == true {
+    dt {
+        @include set-box-sizing-border-box;
+    }
+}

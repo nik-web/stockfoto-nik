@@ -1,0 +1,20 @@
+//
+// Add table content html-elements 
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Table_content
+//
+// The elements here are used to create and handle tabular data.
+//
+// Created on : 22.01.2019, 06:47:19
+// Author     : nik
+
+@import 'table-content/caption',
+        'table-content/col',
+        'table-content/colgroup',
+        'table-content/table',
+        'table-content/tbody',
+        'table-content/td',
+        'table-content/tfoot',
+        'table-content/th',
+        'table-content/thead',
+        'table-content/tr';

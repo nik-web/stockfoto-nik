@@ -1,0 +1,13 @@
+//
+// The HTML <optgroup> element creates a grouping of options within a <select> element.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup
+//
+// Created on : 21.01.2019, 12:27:05
+// Author     : nik
+
+@if $enable-abstracts-base-elements-optgroup == true {
+    optgroup {
+        @include set-box-sizing-border-box;
+    }
+}

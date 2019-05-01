@@ -1,0 +1,16 @@
+//
+// <samp>: sample output html element
+//
+// The HTML Sample Element (<samp>) is used to enclose inline text which represents
+// sample (or quoted) output from a computer program. Its contents are typically
+// rendered using the browser's default monospaced font (such as Courier or Lucida Console).
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp
+//
+// Created on : 22.01.2019, 11:49:26
+// Author     : nik
+
+@if $enable-abstracts-base-elements-samp == true {
+    samp {
+        @include set-box-sizing-border-box;
+    }
+}

@@ -1,0 +1,13 @@
+//
+// The HTML <select> element represents a control that provides a menu of options
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
+//
+// Created on : 21.01.2019, 12:23:34
+// Author     : nik
+
+@if $enable-abstracts-base-elements-select == true {
+    select {
+        @include set-box-sizing-border-box;
+    }
+}

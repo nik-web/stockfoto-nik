@@ -1,0 +1,37 @@
+//
+// HTML element main
+//
+// <main> element specifies the main content of a document
+//
+// Default css values
+// https://www.w3schools.com/cssref/css_default_values.asp
+// None
+//
+// 1. Eric Meyer’s “Reset CSS” 2.0
+// 2. Render these used elements consistently in IE.
+// 3. Change from `box-sizing: content-box` so that `width` is not affected
+// 4. For responsive sticky footer
+//
+// Use the element only once on one page for the main content.
+// Enable default true
+//
+// Created on : 12.01.2019, 08:54:42
+// Author     : nik
+
+
+@if $enable-abstracts-base-elements-main == true {
+    main {
+        display: block; // 2
+        flex: 1 1 0; // 4
+        margin: 0; // 1
+        border: 0; // 1
+        padding: 0; // 1
+        vertical-align: baseline; // 1
+        @include set-box-sizing-border-box; // 3
+        @include hyphens(auto);
+        @include media-breakpoint-up(xl) {
+            font-size: $main-font-size-xl;
+        }
+    }
+}
+

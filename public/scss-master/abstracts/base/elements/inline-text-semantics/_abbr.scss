@@ -1,0 +1,13 @@
+//
+// The HTML Abbreviation element (<abbr>) represents an abbreviation or acronym; the optional title attribute can provide an expansion or description for the abbreviation.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr
+//
+// Created on : 22.01.2019, 10:54:34
+// Author     : nik
+
+@if $enable-abstracts-base-elements-abbr == true {
+    abbr {
+        @include set-box-sizing-border-box;
+    }
+}

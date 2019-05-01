@@ -1,0 +1,13 @@
+//
+// <u>: unarticulated annotation (Underline) html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u
+//
+// Created on : 22.01.2019, 11:54:13
+// Author     : nik
+
+@if $enable-abstracts-base-elements-u == true {
+    u {
+        @include set-box-sizing-border-box;
+    }
+}

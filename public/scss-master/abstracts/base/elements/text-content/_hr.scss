@@ -1,0 +1,13 @@
+//
+// <hr>: thematic break (horizontal rule) html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
+//
+// Created on : 22.01.2019, 07:22:21
+// Author     : nik
+
+@if $enable-abstracts-base-elements-hr == true {
+    hr {
+        @include set-box-sizing-border-box;
+    }
+}

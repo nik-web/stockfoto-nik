@@ -1,0 +1,13 @@
+//
+//
+//
+//
+//
+//Created on : 22.01.2019, 07:25:29
+//  Author     : nik
+
+@if $enable-abstracts-base-elements-ol == true {
+    ol {
+        @include set-box-sizing-border-box;
+    }
+}

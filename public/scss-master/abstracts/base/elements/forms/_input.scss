@@ -1,0 +1,13 @@
+//
+// <input> (Form Input) html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+//
+// Created on : 21.01.2019, 12:19:57
+// Author     : nik
+
+@if $enable-abstracts-base-elements-input == true {
+    input {
+        @include set-box-sizing-border-box;
+    }
+}

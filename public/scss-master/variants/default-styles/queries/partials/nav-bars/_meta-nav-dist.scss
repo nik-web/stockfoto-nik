@@ -1,0 +1,77 @@
+//
+// Meta-nav
+// 
+// Use html-elements <div>, <ul>, <li>
+//
+// Created on : 15.01.2019, 15:47:01
+// Updated on : 12.02.2019, 10:46
+// Author     : nik
+
+//
+// Meta nav wrapper container
+//
+// <div> element
+
+#meta-nav-wrapper {
+    @include make-container();
+    @include make-container-max-widths();
+    padding-top: .5rem;
+    padding-bottom: .25rem;
+}
+
+//
+// Navbar list
+//
+// <ul> element
+
+#meta-nav {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    list-style: none;
+    line-height: $line-height-meta-nav;
+    @include media-breakpoint-up($meta-nav-breakpoint) {
+        flex-direction: row;
+        justify-content: center;
+        max-width: 100%;
+        margin: 0;  
+    }
+}
+
+//
+// Navbar list item
+//
+// <li> element
+
+.meta-nav-item {
+    margin-bottom: .25rem;
+    padding: 0 1rem .25rem 1rem;
+    border-bottom: 1px dotted $nav-link-color;
+    &:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+    @include media-breakpoint-up($meta-nav-breakpoint) {
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+    
+    //
+    // Meta nav link
+    //
+    // <a> element
+    
+    .meta-nav-link {
+        color: $nav-link-color;
+    }
+    
+    .meta-nav-link:hover,
+    .meta-nav-linkactive,
+    .meta-nav-link:focus {
+        text-decoration: none;
+        color: $nav-link-color-selected;
+        outline-color: transparent;
+    }
+}

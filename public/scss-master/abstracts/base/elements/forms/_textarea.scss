@@ -1,0 +1,16 @@
+//
+// <textarea> html element
+//
+// The HTML <textarea> element represents a multi-line plain-text editing control,
+// useful when you want to allow users to enter a sizeable amount of free-form text,
+// for example a comment on a review or feedback form.
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea
+//
+// Created on : 21.01.2019, 12:30:30
+// Author     : nik
+
+@if $enable-abstracts-base-elements-textarea == true {
+    textarea {
+        @include set-box-sizing-border-box;
+    }
+}

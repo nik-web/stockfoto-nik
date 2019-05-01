@@ -1,0 +1,97 @@
+//
+// Set gray colol scheme for this variant
+//
+// This color scheme use only achromatic colors.
+//
+//  Created on : 03.02.2019, 10:16:49
+//  Author     : nik
+
+//
+// Used colors
+//
+$white: #fff;
+$very-light-gray: #f5f5f5;
+$light-gray: #e9ecef;
+$medium-gray: #7f7f7f;
+$dark-gray: #393939;
+$very-dark-gray: #212529;
+$black: #000;
+
+$blue: #4285f4;
+
+//
+// Global
+//
+$light-active-color: $white;
+$dark-active-color: $black;
+
+//
+// HTML elements
+//
+// <body>: Element (sectioning-root)
+$body-color: $dark-gray;
+$body-bg: $white;
+
+// Headings (content-sectioning)
+$headings-color: $medium-gray;
+
+// <a>: Element (inline-text-semantics)
+$link-color: $blue;
+$link-visited-color: $blue;
+$link-hover-color: $medium-gray;
+$link-active-color: $black;
+
+//
+// Layout segments
+//
+
+// Header (layout segment)
+$site-header-color: $black;
+$site-header-bg: $light-gray;
+
+// Nav (layout segment) "main-nav"
+$nav-bars-bg: $dark-gray;
+$nav-link-color: $light-gray;
+$nav-link-color-selected: $white;
+$nav-dropdown-bg: $dark-gray;
+
+// Alert (layout segment) "messages"
+$alert-success-color: #3c763d;
+$alert-success-border-color: #d0e9c6;
+$alert-success-bg: #dff0d8;
+
+$alert-info-color: #31708f;
+$alert-info-border-color: #bcdff1;
+$alert-info-bg: #d9edf7;
+
+$alert-warning-color: #8a6d3b;
+$alert-warning-border-color: #faf2cc;
+$alert-warning-bg: #fcf8e3;
+
+$alert-danger-color: #a94442;
+$alert-danger-border-color: #ebcccc;
+$alert-danger-bg: #f2dede;
+
+$alert-default-bg: $very-light-gray;
+$alert-default-border-color: $light-gray;
+
+// Footer (layout segment)
+$site-footer-color: $very-light-gray;
+$site-footer-bg: $dark-gray;
+
+//
+// Layout partials
+//
+
+// Brand
+$brand-color: $dark-active-color;
+
+
+//
+// Content compoments
+//
+
+// Site main content header
+$main-content-header-bg: $very-light-gray;
+
+

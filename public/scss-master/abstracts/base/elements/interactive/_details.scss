@@ -1,0 +1,13 @@
+//
+// <details>: details disclosure html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+//
+// Created on : 21.01.2019, 13:01:30
+// Author     : nik
+
+@if $enable-abstracts-base-elements-details == true {
+    details {
+        @include set-box-sizing-border-box;
+    }
+}

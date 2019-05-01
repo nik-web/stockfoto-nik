@@ -1,0 +1,14 @@
+//
+// The HTML <fieldset> element is used to group several controls as well as
+// labels (<label>) within a web form.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
+//
+// Created on : 21.01.2019, 12:15:06
+// Author     : nik
+
+@if $enable-abstracts-base-elements-fieldset == true {
+    fieldset {
+        @include set-box-sizing-border-box;
+    }
+}

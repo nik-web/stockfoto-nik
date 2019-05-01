@@ -1,0 +1,15 @@
+//
+// <var>: variable html element
+//
+// The HTML Variable element (<var>) represents the name of a variable in a mathematical expression or a programming context.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var
+//
+// Created on : 22.01.2019, 11:54:36
+// Author     : nik
+
+@if $enable-abstracts-base-elements-var == true {
+    var {
+        @include set-box-sizing-border-box;
+    }
+}

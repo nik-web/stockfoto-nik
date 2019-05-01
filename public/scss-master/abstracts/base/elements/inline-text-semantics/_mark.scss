@@ -1,0 +1,16 @@
+//
+// <mark>: mark text html element
+//
+// The HTML Mark Text element (<mark>) represents text which is marked or
+// highlighted for reference or notation purposes, due to the marked passage's
+// relevance or importance in the enclosing context.
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark
+//
+// Created on : 22.01.2019, 11:37:38
+// Author     : nik
+
+@if $enable-abstracts-base-elements-mark == true {
+    mark {
+        @include set-box-sizing-border-box;
+    }
+}

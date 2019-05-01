@@ -1,0 +1,32 @@
+//
+// <div>: content division html element
+//
+// The div element is a generic container for flow content that by itself does
+// not represent anything.
+// https://www.w3.org/TR/2012/WD-html-markup-20121025/div.html#div
+//
+// Default css values
+// https://www.w3schools.com/cssref/css_default_values.asp
+// display: block
+//
+// 1. Eric Meyer’s “Reset CSS” 2.0
+// 2. Render these used elements consistently in IE.
+// 3. Change from `box-sizing: content-box` so that `width` is not affected
+//
+// Enable default true
+//
+// Created on : 12.01.2019, 11:22:35
+// Updated on : 10.02.2019, 11:25
+// Author     : nik
+
+@if $enable-abstracts-base-elements-div == true {
+    div {
+        display: block; // 2 (default)
+        margin: 0; // 1
+        border: 0; // 1
+        padding: 0; // 1
+        vertical-align: baseline; // 1
+        @include set-box-sizing-border-box; // 3
+    }
+}
+

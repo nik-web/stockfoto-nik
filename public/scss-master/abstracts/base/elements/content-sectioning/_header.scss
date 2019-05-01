@@ -1,0 +1,29 @@
+//
+// HTML element header
+//
+// The header element represents the header of a section.
+// https://www.w3.org/TR/2012/WD-html-markup-20121025/header.html#header
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header
+//
+// Default css values
+// https://www.w3schools.com/cssref/css_default_values.asp
+// display: block
+//
+// 1. Eric Meyer’s “Reset CSS” 2.0
+// 2. Render these used elements consistently in IE.
+// 3. Change from `box-sizing: content-box` so that `width` is not affected
+//
+// Created on : 12.01.2019, 08:15:25
+// Updated on : 10.02.2019, 10:28:00
+// Author     : nik
+
+@if $enable-abstracts-base-elements-header == true {
+    header {
+        display: block; // 2, default
+        margin: 0; // 1
+        border: 0; // 1
+        padding: 0; // 1
+        vertical-align: baseline; // 1
+        @include set-box-sizing-border-box; // 3
+    }
+}

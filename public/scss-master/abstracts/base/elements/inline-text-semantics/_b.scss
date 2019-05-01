@@ -1,0 +1,13 @@
+//
+// <b>: bring attention to html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b
+//
+// Created on : 22.01.2019, 10:54:54
+// Author     : nik
+
+@if $enable-abstracts-base-elements-b == true {
+    b {
+        @include set-box-sizing-border-box;
+    }
+}

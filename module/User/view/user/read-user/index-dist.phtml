@@ -1,0 +1,129 @@
+<?php
+/**
+ * stockfoto-nik cms
+ * 
+ * User read-user index view template (main content)
+ * 
+ * Template display the list of all users.
+ *  
+ * @author     Niklaus Höpfner <editor@nik-web.net>
+ * @link       https://github.com/nik-web/stockfoto-nik
+ * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
+ * @version    1.0.0
+ * @since      1.0.0
+ */
+
+//Individual part of the placeholder
+$path = '_module_user_view_read-user_index';
+
+$applicationName = $this->applicationData()->renderName();
+
+$title = sprintf($this->translate('title' . $path), $applicationName);
+$this->headTitle($title);
+$description = sprintf($this->translate('meta_description_content' . $path), $applicationName);
+$keywords = $this->translate('meta_keywords_content' . $path);
+$this->headMeta()->appendName('description', $description)
+    ->appendName('keywords', $keywords);
+
+$paginationRoute = 'read-users';
+?>
+<header id="main-header">
+    <h1>
+        <?= $this->translate('main_heading' . $path) ?>
+    </h1>
+</header>
+<?php
+foreach ($this->paginator as $user) {
+?>
+<section class="row">
+    <div class="col-12">
+        <h2>
+            Konto-<?= $user->getId() . "\n" ?>
+        </h2>
+    </div>
+    <div class="col-md-4">
+        <?= $this->escapeHtml($user->getAlias()) . "\n" ?>
+    </div>
+    <div class="col-md-4">
+        <?= $this->escapeHtml($user->getEmail()) . "\n" ?>
+    </div>
+    <div class="col-md-4">
+        <a  href="<?= $this->url('read-user', ['locale' => $this->locale(), 'id' => $user->getId()]); ?>" title="Nutzerkonto-% detailliert anzeigen.">
+            anzeigen
+        </a>
+    </div>
+</section>
+<?php
+}
+?>
+<div class="row">
+    <ul class="pagination">
+<!-- To first page -->
+    <?php if ($this->pages->first != $this->pages->current): ?>
+        <li class="page-item">
+            <a href="<?= $this->url($paginationRoute, ['locale' => $this->locale(), 'page' => $this->pages->first]); ?>" aria-label="First">
+                <span class="page-link" aria-hidden="true">&lt;&lt;</span>
+            </a>
+        </li>
+    <?php else: ?>
+        <li class="page-item">
+            <span class="page-link" aria-hidden="true">&lt;&lt;</span>
+        </li>
+    <?php endif; ?>
+<!-- Previous page link -->
+    <?php if (isset($this->pages->previous)): ?>
+        <li class="page-item">
+            <a href="<?= $this->url($paginationRoute, ['locale' => $this->locale(), 'page' => $this->pages->previous]); ?>" aria-label="Previous">
+                <span class="page-link" aria-hidden="true">&lt;</span>
+            </a>
+        </li>
+    <?php else: ?>
+        <li class="page-item">
+            <span class="page-link" aria-hidden="true">&lt;</span>
+        </li>
+    <?php endif; ?>
+<!-- Numbered page links -->
+<?php foreach ($this->pages->pagesInRange as $page): ?>
+    <?php if ($page != $this->pages->current): ?>
+        <li class="page-item hidden-mobil-page-link">
+            <a class="page-link" href="<?= $this->url($paginationRoute, ['locale' => $this->locale(), 'page' => $page]); ?>">
+                <?= $this->escapeHtml($page); ?>
+            </a>
+        </li>
+    <?php else: ?>
+        <li class="page-item active">
+            <span class="page-link" aria-hidden="true">
+                <b>
+                    <?= $this->escapeHtml($page); ?>
+                </b>
+            </span>
+        </li>
+    <?php endif; ?>
+<?php endforeach; ?>
+<!-- Next page link -->
+    <?php if (isset($this->pages->next)): ?>
+        <li class="page-item">
+            <a href="<?= $this->url($paginationRoute, ['locale' => $this->locale(), 'page' => $this->pages->next]); ?>" aria-label="Next">
+                <span class="page-link" aria-hidden="true">&gt</span>
+            </a>
+        </li>
+<?php else: ?>
+        <li class="page-item">
+            <span class="page-link" aria-hidden="true">&gt</span>
+        </li>
+<?php endif; ?>
+<!-- Last page link -->
+    <?php if ($this->pages->last !=  $this->pages->current): ?>
+        <li class="page-item">
+            <a href="<?= $this->url($paginationRoute, ['locale' => $this->locale(), 'page' => $this->pages->last]); ?>" aria-label="Last">
+                <span class="page-link" aria-hidden="true">&gt&gt</span>
+            </a>
+        </li>
+<?php else: ?>
+        <li class="page-item">
+            <!--span aria-hidden="true">&raquo;</span-->
+            <span class="page-link" aria-hidden="true">&gt&gt</span>
+        </li>
+<?php endif; ?>
+    </ul>
+</div>

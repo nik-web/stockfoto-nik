@@ -1,0 +1,16 @@
+//
+// <dfn>: definition html element
+//
+// The HTML Definition element (<dfn>) is used to indicate the term being defined
+// within the context of a definition phrase or sentence. The <p> element,
+// the <dt>/<dd> pairing, or the <section> element which is the nearest ancestor
+// of the <dfn> is considered to be the definition of the term.
+//
+// Created on : 22.01.2019, 11:00:21
+// Author     : nik
+
+@if $enable-abstracts-base-elements-dfn == true {
+    dfn {
+        @include set-box-sizing-border-box;
+    }
+}

@@ -1,0 +1,13 @@
+//
+// <thead>: table head html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead
+//
+// Created on : 22.01.2019, 06:35:38
+// Author     : nik
+
+@if $enable-abstracts-base-elements-thead == true {
+    thead {
+        @include set-box-sizing-border-box;
+    }
+}

@@ -1,0 +1,33 @@
+//
+// <p>: paragraph html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p
+// https://www.w3.org/TR/2012/WD-html-markup-20121025/p.html#p
+//
+// Default css values
+// https://www.w3schools.com/cssref/css_default_values.asp
+// display: block;
+// margin-top: 1em;
+// margin-bottom: 1em;
+// margin-left: 0;
+// margin-right: 0;
+// 
+// 1. Eric Meyer’s “Reset CSS” 2.0
+// 2. Change from `box-sizing: content-box` so that `width` is not affected
+// 3. Default CSS values
+// 4. Overwrite default
+//
+// Created on : 12.01.2019, 11:40:16
+// Updated on : 10.02.2019, 11:06
+// Author     : nik
+
+@if $enable-abstracts-base-elements-p == true {
+    p {
+        display: block; // 3 (default)
+        margin: $p-margin-top $p-margin-right $p-margin-bottom $p-margin-left; // 4
+        border: 0; // 1
+        padding: 0; // 1
+        vertical-align: baseline;
+        @include set-box-sizing-border-box; // 2
+    }
+}

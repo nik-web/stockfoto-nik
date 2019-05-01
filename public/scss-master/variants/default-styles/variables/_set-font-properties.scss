@@ -1,0 +1,30 @@
+//
+// Set font properties variables for this variant
+//
+// Created on : 29.01.2019, 15:56:06
+// Author     : nik
+
+//
+// Layout segments
+//
+
+// Nav (layout segment) "main-nav"
+$nav-font-weight: $font-weight-semi-bold;
+$nav-line-height: normal;
+$dropdown-item-font-weight: $font-weight-normal;
+
+// Footer (layout segment)
+$site-footer-font-weight: $font-weight-semi-bold;
+
+//
+// Layout partials
+//
+
+// Brand (layout partial)
+$brand-font-size:  1.25rem;
+$brand-font-weight: $font-weight-normal;
+$brand-font-family: $font-family-audiowide;
+$brand-line-height: 1.3;
+
+// Meta-nav (layout partial)
+$line-height-meta-nav: 1.3;

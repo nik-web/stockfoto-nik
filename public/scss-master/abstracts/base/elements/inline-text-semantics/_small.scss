@@ -1,0 +1,22 @@
+//
+// <small> html element
+//
+// This element is repurposed to represent side-comments and small print,
+// including copyright and legal text.
+// https://www.w3.org/TR/2012/WD-html-markup-20121025/small.html
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small
+//
+// Default css values
+// https://www.w3schools.com/cssref/css_default_values.asp
+// font-size: smaller;(Sets the font-size to a smaller size than the parent element)
+//
+// Created on : 22.01.2019, 11:50:07
+// Updated on : 12.02.2019, 11:47
+// Author     : nik
+
+@if $enable-abstracts-base-elements-small == true {
+    small {
+        font-size: smaller; // default
+        @include set-box-sizing-border-box;
+    }
+}

@@ -1,0 +1,140 @@
+<?php
+/**
+ * stockfoto-nik cms
+ * 
+ * User delete-user delete view template (main content)
+ *  
+ * @author     Niklaus Höpfner <editor@nik-web.net>
+ * @link       https://github.com/nik-web/stockfoto-nik
+ * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
+ * @version    1.0.0
+ * @since      1.0.0
+ */
+
+//Individual part of the placeholder
+$path = '_module_user_view_delete-user_delete';
+
+$applicationName = $this->applicationData()->renderName();
+
+$title = $this->translate('title' . $path);
+$this->headTitle($title);
+$description = $this->translate('meta_description_content' . $path);
+$keywords = $this->translate('meta_keywords_content' . $path);
+$this->headMeta()->appendName('description', $description)
+    ->appendName('keywords', $keywords);
+
+$form = $this->form;
+$form->setAttribute('class', 'col-md');
+$hiddenId = $form->get('hidden_id')->setAttribute('value', $this->user->getId());
+$csrf = $form->get('csrf');
+$submitConfirm = $form->get('confirm');
+$submitConfirm->setAttribute('class', 'btn-danger');
+$submitCancel = $form->get('cancel');
+$submitCancel->setAttribute('class', 'btn-primary');
+
+$form->prepare();
+?>
+
+<header id="main-header">
+    <h1>
+        <?= $this->translate('main_heading' . $path) ?>
+    </h1>
+</header>
+<div class="row">
+    <section class="col-md">
+        <h2>
+            <?= $this->translate('heading_account-data' . $path) . "\n" ?>            
+        </h2>
+        <div class="row">
+            <div class="col-sm-5">
+                <?= $this->translate('label_alias' . $path) . "\n" ?>                
+            </div>
+            <div class="col-sm-7">
+                <?= $this->escapeHtml($this->user->getAlias()) . "\n" ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <?= $this->translate('label_email' . $path) . "\n" ?>
+            </div>
+            <div class="col-sm-7">
+                <?= $this->escapeHtml($this->user->getEmail()) . "\n" ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <?= $this->translate('label_password' . $path) . "\n" ?>
+            </div>
+            <div class="col-sm-7">
+                <b>
+                    &lowast;&lowast;&lowast;&lowast;&lowast;&lowast;&lowast;&lowast;&lowast;&lowast;&nbsp;&nbsp;
+                </b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <?= $this->translate('label_status' . $path) . "\n" ?>
+            </div>
+            <div class="col-sm-7">
+            <?php
+                if (0 === $this->user->getStatus()) {
+                    echo $this->translate('value_status' . $path . '_blocked') . "\n";
+                } else {
+                    echo $this->translate('value_status' . $path . '_active') . "\n";
+                }
+            ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <?= $this->translate('label_created-on' . $path) . "\n" ?>
+            </div>
+            <div class="col-sm-7">
+                <?= $this->dateFormat(new DateTime($this->user->getCreatedOn()), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, $this->locale()) . "\n" ?>
+            </div>
+        </div>
+    <?php
+        if ($this->user->getUpdatedOn()) {
+    ?>
+        <div class="row">
+            <div class="col-sm-5">
+                <?= $this->translate('label_updated-on' . $path) . "\n" ?>
+            </div>
+            <div class="col-sm-7">
+                <?= $this->dateFormat(new DateTime($this->user->getUpdatedOn()), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, $this->locale()) . "\n" ?>
+            </div>
+        </div>
+    <?php
+        }
+        if ($this->user->getRoles()) {
+    ?>
+        <div class="row">
+            <div class="col-sm-5">
+                <?= $this->translate('label_roles' . $path) . "\n" ?>
+            </div>
+            <div class="col-sm-7">
+                <?php
+                    echo implode(', ', $this->user->getRoles());
+                ?>
+            </div>
+        </div>
+    <?php
+        }
+    ?>
+    </section>
+    <?= $this->form()->openTag($form) . "\n" ?>
+        <fieldset>
+            <legend>
+                <?= $this->translate('legend' . $path . '_account_delete') . "\n" ?>                
+            </legend>
+            <?= $this->formElement($hiddenId) . "\n" ?>           
+            <div class="form-elemet-wrapper">
+                <?= $this->formSubmit($submitConfirm) . "\n" ?>
+            </div> 
+        </fieldset>
+        <?= $this->formElement($csrf) . "\n" ?> 
+        <div class="form-submit-wrapper">
+            <?= $this->formSubmit($submitCancel) . "\n" ?>
+        </div> 
+    <?= $this->form()->closeTag() . "\n" ?>
+</div>

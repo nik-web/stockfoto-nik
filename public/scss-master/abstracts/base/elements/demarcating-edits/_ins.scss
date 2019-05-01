@@ -1,0 +1,13 @@
+//
+// HTML <ins> element 
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins
+//
+// Created on : 21.01.2019, 08:55:48
+// Author     : nik
+
+@if $enable-abstracts-base-elements-ins == true {
+    ins {
+        @include set-box-sizing-border-box;
+    }
+}

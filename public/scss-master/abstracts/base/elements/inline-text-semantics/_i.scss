@@ -1,0 +1,19 @@
+//
+// <i>: html element
+//
+// The HTML <i> element represents a range of text that is set off from the
+// normal text for some reason. Some examples include technical terms, foreign
+// language phrases, or fictional character thoughts.
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i
+//
+// 1. It is typically displayed in italic type.
+//
+// Created on : 22.01.2019, 11:36:51
+// Author     : nik
+
+@if $enable-abstracts-base-elements-i == true {
+    i {
+        font-style: italic; // 1
+        @include set-box-sizing-border-box;
+    }
+}

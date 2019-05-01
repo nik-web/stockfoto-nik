@@ -1,0 +1,16 @@
+//
+// <wbr> word break opportunity html element
+
+// The HTML <wbr> element represents a word break opportunity—a position within
+// text where the browser may optionally break a line, though its line-breaking
+// rules would not otherwise create a break at that location.
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr
+//
+// Created on : 22.01.2019, 11:55:09
+// Author     : nik
+
+@if $enable-abstracts-base-elements-wbr == true {
+    wbr {
+        @include set-box-sizing-border-box;
+    }
+}

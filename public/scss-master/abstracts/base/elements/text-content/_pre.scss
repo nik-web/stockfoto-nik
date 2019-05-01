@@ -1,0 +1,13 @@
+//
+// <pre>: preformatted text html element
+//
+//
+//
+//Created on : 22.01.2019, 07:23:06
+//  Author     : nik
+
+@if $enable-abstracts-base-elements-pre == true {
+    pre {
+        @include set-box-sizing-border-box;
+    }
+}

@@ -1,0 +1,13 @@
+//
+// <table>: table html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+//
+// Created on : 22.01.2019, 06:23:09
+// Author     : nik
+
+@if $enable-abstracts-base-elements-table == true {
+    table {
+        @include set-box-sizing-border-box;
+    }
+}

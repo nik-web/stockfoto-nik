@@ -1,0 +1,14 @@
+//
+// <sup>: superscript html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup
+//
+//
+// Created on : 22.01.2019, 11:51:34
+// Author     : nik
+
+@if $enable-abstracts-base-elements-sup == true {
+    sup {
+        @include set-box-sizing-border-box;
+    }
+}

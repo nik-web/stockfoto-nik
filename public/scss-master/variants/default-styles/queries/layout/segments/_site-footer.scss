@@ -1,0 +1,24 @@
+//
+// Layout segment site footer
+//
+// Only once on each page use html id attribute
+// 
+// Use html-element <footer>
+//
+//  Created on : 15.01.2019, 09:19:46
+//  Author     : nik
+
+//
+// Site footer
+//
+// <footer> element
+
+#site-footer {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    @include make-container();
+    color: $site-footer-color;
+    background-color: $site-footer-bg;
+    font-weight: $site-footer-font-weight;
+}

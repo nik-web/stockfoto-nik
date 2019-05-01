@@ -1,0 +1,15 @@
+//
+// The HTML <figure> element represents self-contained content, frequently with
+// a caption (<figcaption>), and is typically referenced as a single unit.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure
+//
+// Created on : 22.01.2019, 07:37:15
+// Author     : nik
+
+@if $enable-abstracts-base-elements-figure == true {
+    figure {
+        display: block;
+        @include set-box-sizing-border-box;
+    }
+}

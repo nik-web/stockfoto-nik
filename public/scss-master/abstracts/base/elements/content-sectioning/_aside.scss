@@ -1,0 +1,27 @@
+//
+// HTML element aside
+//
+// The aside element represents content that is tangentially related to the
+// content that forms the main textual flow of a document.
+// https://www.w3.org/TR/2012/WD-html-markup-20121025/aside.html#aside
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside
+//
+// 1. Eric Meyer’s “Reset CSS” 2.0
+// 2. Render these used elements consistently in IE.
+// 3. Change from `box-sizing: content-box` so that `width` is not affected
+//
+// Enable default false
+//
+// Created on : 12.01.2019, 10:16:25
+// Author     : nik
+
+@if $enable-abstracts-base-elements-aside == true {
+aside {
+        display: block; // 2
+        margin: 0; // 1
+        border: 0; // 1
+        padding: 0; // 1
+        vertical-align: baseline; // 1
+        @include set-box-sizing-border-box; // 3
+    }
+}

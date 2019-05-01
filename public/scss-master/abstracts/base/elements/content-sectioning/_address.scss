@@ -1,0 +1,29 @@
+//
+// HTML element address
+//
+// The HTML <address> element indicates that the enclosed HTML provides contact
+// information for a person or people, or for an organization.
+// https://www.w3.org/TR/2012/WD-html-markup-20121025/address.html#address
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address
+//
+ //1. Eric Meyer’s “Reset CSS” 2.0
+// 2. Render these used elements consistently in IE.
+// 3. Change from `box-sizing: content-box` so that `width` is not affected
+// 4. Typical default display propertie
+//
+// Enable default false
+//
+// Created on : 21.01.2019, 08:11:31
+// Author     : nik
+
+@if $enable-abstracts-base-elements-address == true {
+    address {
+        display: block; // 4
+        margin: 0; // 1
+        border: 0; // 1
+        padding: 0; // 1
+        vertical-align: baseline; // 1
+        font-style: italic; // 4
+        @include set-box-sizing-border-box; // 3
+    }
+}

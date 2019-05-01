@@ -1,0 +1,13 @@
+//
+// The HTML <img> element embeds an image into the document. It is a replaced element.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
+//
+// Created on : 21.01.2019, 12:40:26
+// Author     : nik
+
+@if $enable-abstracts-base-elements-img == true {
+    img {
+        @include set-box-sizing-border-box;
+    }
+}

@@ -1,0 +1,14 @@
+//
+// <video>: video embed html element
+//
+// The HTML Video element (<video>) embeds a media player which supports video
+// playback into the document.
+//
+// Created on : 21.01.2019, 12:46:59
+// Author     : nik
+
+@if $enable-abstracts-base-elements-video == true {
+    video {
+        @include set-box-sizing-border-box;
+    }
+}

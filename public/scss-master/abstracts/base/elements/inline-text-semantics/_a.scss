@@ -1,0 +1,63 @@
+//
+// HTML element a (hyperlink)
+//
+// The a element represents a hyperlink.
+// https://www.w3.org/TR/2012/WD-html-markup-20121025/a.html#a
+// The HTML <a> element (or anchor element) creates a hyperlink to other web
+// pages, files, locations within the same page, email addresses, or any other URL.
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+//
+// Default css values
+// https://www.w3schools.com/cssref/css_default_values.asp
+// a:link
+// color: (internal value);
+// text-decoration: underline;
+// cursor: auto;
+// a:visited
+// color: (internal value);
+// text-decoration: underline;
+// cursor: auto;
+// a:link:active
+// color: (internal value);
+// a:visited:active
+// color: (internal value);
+//
+// 1. Eric Meyer’s “Reset CSS” 2.0
+// 2. Change from `box-sizing: content-box` so that `width` is not affected
+// 3. Override default
+//
+// Created on : 13.01.2019, 08:20:30
+// Updated on : 10.02.2019, 11:16
+// Author     : nik
+
+@if $enable-abstracts-base-elements-a == true {
+    a {
+        margin: 0; // 1
+        border: 0; // 1
+        padding: 0; // 1
+        vertical-align: baseline; // 1
+        background-color: transparent;
+        cursor: pointer; // 3
+        @include set-box-sizing-border-box; // 2
+    }
+    
+    a:link {
+        color: $link-color;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: $link-visited-color;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $link-hover-color;
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: $link-active-color;
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,70 @@
+<?php
+/**
+ * stockfoto-nik cms
+ * 
+ * User registration create view template (main content)
+ *  
+ * @author     Niklaus Höpfner <editor@nik-web.net>
+ * @link       https://github.com/nik-web/stockfoto-nik
+ * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
+ * @version    1.0.0
+ * @since      1.0.0
+ */
+
+//Individual part of the placeholder
+$path = '_module_user_registration_create';
+
+$title = $this->translate('title' . $path);
+$this->headTitle($title);
+$description = $this->translate('meta_description_content' . $path);
+$keywords = $this->translate('meta_keywords_content' . $path);
+$this->headMeta()->appendName('description', $description)
+    ->appendName('keywords', $keywords);
+
+$form = $this->form;
+$form->setAttribute('class', 'col-md-6');
+$alias = $form->get('alias');
+$email = $form->get('email');
+$csrf = $form->get('registration_csrf');
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn-success');
+$form->prepare();
+?>
+<header id="main-header">
+    <h1>
+        <?= $this->translate('main_heading' . $path) ?>
+    </h1>
+</header>
+<div class="row">
+    <?= $this->form()->openTag($form) . "\n" ?>
+        <fieldset>
+            <legend>                
+                <?= $this->translate('form_fieldset_legend' . $path) . "\n" ?>
+            </legend>
+            <div class="form-elemet-wrapper">
+                <?= $this->formLabel($alias) . "\n" ?>
+                <?= $this->formElement($alias) . "\n" ?>
+                <small id="alias-description">
+                    <i>
+                        <?= $this->translate('form_alias_description' . $path) . "\n" ?>
+                    </i>
+                </small>
+                <?= $this->formElementErrors()->render($alias, ['class' => 'help-block']) . "\n" ?>
+            </div>
+            <div class="form-elemet-wrapper">
+                <?= $this->formLabel($email) . "\n" ?>
+                <?= $this->formElement($email) . "\n" ?>
+                <small id="email-description">
+                    <i>
+                        <?= $this->translate('form_email_description' . $path) . "\n" ?>
+                    </i>
+                </small>
+                <?= $this->formElementErrors()->render($email, ['class' => 'help-block']) . "\n" ?>
+            </div>
+        </fieldset>
+    <?= $this->formElement($csrf) . "\n" ?>
+    <div class="form-submit-wrapper">
+        <?= $this->formSubmit($submit) . "\n" ?>
+    </div>
+    <?= $this->form()->closeTag() . "\n" ?>
+</div>

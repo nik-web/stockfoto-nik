@@ -1,0 +1,17 @@
+//
+// HTML element hgroup
+//
+// The HTML <hgroup> element represents a multi-level heading for a section of a
+// document. It groups a set of <h1>–<h6> elements.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hgroup
+//
+// Created on : 21.01.2019, 09:50:42
+// Author     : nik
+
+@if $enable-abstracts-base-elements-hgroup == true {
+    hgroup {
+        display: block;
+        @include set-box-sizing-border-box;
+    }
+}

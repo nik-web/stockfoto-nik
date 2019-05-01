@@ -1,0 +1,29 @@
+//
+// HTML element footer
+//
+// The footer element represents the footer for the section it applies to.
+// https://www.w3.org/TR/2012/WD-html-markup-20121025/footer.html#footer
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer
+//
+// 1. Eric Meyer’s “Reset CSS” 2.0
+// 2. Render these used elements consistently in IE.
+// 3. Change from `box-sizing: content-box` so that `width` is not affected
+//
+// Default css values
+// https://www.w3schools.com/cssref/css_default_values.asp
+// display: block
+//
+// Created on : 12.01.2019, 09:24:35
+// Updated on : 11.02.2019, 12:24
+// Author     : nik
+
+@if $enable-abstracts-base-elements-footer == true {
+    footer{
+        display: block; // 2
+        margin: 0; // 1
+        border: 0; // 1
+        padding: 0; // 1
+        vertical-align: baseline; // 1
+        @include set-box-sizing-border-box; // 3
+    }
+}

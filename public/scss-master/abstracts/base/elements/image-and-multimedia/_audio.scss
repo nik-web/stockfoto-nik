@@ -1,0 +1,13 @@
+//
+// <audio>: The Embed Audio html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
+//
+// Created on : 21.01.2019, 12:48:17
+// Author     : nik
+
+@if $enable-abstracts-base-elements-audio == true {
+    audio {
+        @include set-box-sizing-border-box;
+    }
+}

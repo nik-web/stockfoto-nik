@@ -1,0 +1,46 @@
+//
+// Document Body element
+//
+// The body element represents the body of a document (as opposed to the document’s metadata).
+// https://www.w3.org/TR/2012/WD-html-markup-20121025/body.html#body
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body
+// 
+// Default css values
+// https://www.w3schools.com/cssref/css_default_values.asp
+// display: block
+// margin: 8px;
+// body:focus 	outline: none;
+//
+// 1. responsiv fixed site header
+// 2. responsive sticky footer
+// 3. Remove the margin in all browsers (overwrite default)
+// 4. Change from `box-sizing: content-box` so that `width` is not affected
+// by `padding` or `border`.
+//
+// Element is always present
+//
+// Created on : 11.01.2019, 17:52:41
+// Updated on : 10.02.2019, 10:52
+// Author     : nik
+
+@if $enable-abstracts-base-elements-body == true {
+    body {
+        display: flex; // 2
+        flex-direction: column; // 2
+        min-height: 100%; // 2
+        margin: 0; // 3
+        padding: 0;
+        color: $body-color;
+        background-color: $body-bg;
+        text-align: left;
+        font-family: $body-font-family;
+        font-style: $body-font-style;
+        font-variant: $body-font-variant;
+        font-weight: $body-font-weight;
+        font-size: $body-font-size;
+        word-spacing: $body-word-spacing;
+        letter-spacing: $body-letter-spacing;
+        @include set-box-sizing-border-box; // 4
+    }
+}
+

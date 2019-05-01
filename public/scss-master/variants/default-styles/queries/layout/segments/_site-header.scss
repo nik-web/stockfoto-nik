@@ -1,0 +1,37 @@
+//
+// Layout segment site header
+//
+// Only once on each page use html id attribute
+// 
+// Use html-elements <header>, <div>
+//
+// Created on : 13.01.2019, 15:45:09
+// Updated on : 11.02.2019, 09:33
+// Author     : nik
+
+//
+// Site header
+//
+// <header> html-element
+//
+// Goes over the entire screen width
+//
+#site-header {
+    @include make-container();
+    background-color: $site-header-bg;
+    color: $site-header-color;
+}
+
+//
+// Site header content wrapper
+//
+// <div> html-element
+//
+// has a maximum width
+//
+#site-header-content-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    @include make-container-max-widths();
+    @include make-container();
+}

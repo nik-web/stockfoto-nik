@@ -1,0 +1,13 @@
+//
+// <sub>: subscript html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub
+//
+// Created on : 22.01.2019, 11:51:21
+// Author     : nik
+
+@if $enable-abstracts-base-elements-sub == true {
+    sub {
+        @include set-box-sizing-border-box;
+    }
+}

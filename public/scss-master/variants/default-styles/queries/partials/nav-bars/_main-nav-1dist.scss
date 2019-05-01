@@ -1,0 +1,227 @@
+//
+// Main-nav bar
+// 
+// Use html-elements: <button>, <span>, <ul>, <li>, <a>
+//
+// Created on : 13.03.2019, 10:36
+// Updated on : 14.03.2019, 09:44
+// Author     : nik
+
+
+//
+// Main navigation toggler
+//
+// <button> html-element, type="button"
+//
+// Button for toggling the navbar when in its collapsed state
+//
+#main-nav-toggler {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    z-index: 1000;
+    padding: .125rem;
+    font-size: 1rem;
+    line-height: 1;
+    color: $nav-link-color;
+    background-color: $nav-link-color;
+    border: 1px solid $nav-link-color;
+    border-radius: 2px;
+    border
+    &:hover,
+    &:active,
+    &:focus {
+        outline-color: transparent;
+    }
+    @include media-breakpoint-up($main-nav-breakpoint) {
+        display: none;        
+    }
+}
+
+//
+// Main navigation toggler icon
+//
+// <span> html-element
+//
+#main-nav-toggler-icon {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;    
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+//
+// Navbar nav list wrapper
+//
+// <div> html-element
+// 
+#main-nav-list-wrapper {
+    width: 100%;
+    margin-top: 2.8rem;
+    @include media-breakpoint-up($main-nav-breakpoint) {
+        display: flex !important;
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+}
+
+//
+// Navbar nav list
+//
+// <ul> html-element
+//
+#main-nav-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    @include media-breakpoint-up($main-nav-breakpoint) {
+        flex-direction: row;
+        margin: 0;
+        padding-right: 100px;
+    }
+}
+
+//
+//
+//
+@mixin nav-list-item($if-dropdown: false) {
+    margin-bottom: .25rem;
+    padding: 0;
+    border-bottom: 1px dotted $nav-link-color;
+    & > a,
+    & > span {
+        display: inline-block;
+        width: 100%;
+        padding: 0 0.5rem .25rem 0.5rem;
+        color: $nav-link-color;
+    }
+    & > a {
+        &:hover,
+        &:active,
+        &:focus {
+            outline-color: transparent;
+            color: $nav-link-color-selected;
+            text-decoration: none;
+        }  
+    }
+    &:last-child {
+        border-bottom: none;
+    }
+    @include media-breakpoint-up($main-nav-breakpoint) {
+        margin-bottom: 0;
+        margin-right: .5rem;
+        border-bottom: none;      
+    }
+    @if ($if-dropdown == true) {
+        & {
+            position: relative;
+        }
+        & > a:hover {
+            color: $nav-link-color-selected !important;
+        }
+    }
+}
+
+//
+//
+//
+@mixin dropdown-item {
+    margin: 0 0 .25rem 0;
+    padding: 0 1rem .25rem 1rem;
+    border-bottom: 1px dotted $nav-link-color;
+    font-weight: $dropdown-item-font-weight;
+    & > a,
+    & > span {
+        display: inline-block;
+        width: 100%;
+        color: $nav-link-color;
+    }
+    & > a {
+        &:hover,
+        &:active,
+        &:focus {
+            outline-color: transparent;
+            color: $nav-link-color-selected;
+            text-decoration: none;
+        }  
+    }
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+//
+// Nav list item
+//
+// <li> html-element
+//
+.main-nav-list-item {
+    @include nav-list-item();
+}
+
+//
+// Nav list item dropdown
+//
+// <li> html-element
+//
+.main-nav-list-item-dropdown {
+    @include nav-list-item(true);
+}
+
+//
+// Always use this class name for script!
+//
+// <ul> html-element
+//
+.dropdown-menu {
+    display: none;
+    position: static;
+    float: none;
+    background-color: $nav-dropdown-bg;
+    list-style: none;
+    padding: .5rem 0 0 0; // remove default ul style
+    border: 1px dotted $nav-link-color;
+    background-clip: padding-box;
+    min-width: 100%;
+    &.show {
+        display: block;
+    }
+    @include media-breakpoint-up($main-nav-breakpoint) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1500;
+        float: left;
+        min-width: 270px;
+    }
+}
+
+//
+// Dropdown-item
+//
+// <li> html element
+//
+.dropdown-item {
+    @include dropdown-item;
+}
+
+//
+// Set bei PHP
+//
+.active {
+    color: $light-active-color !important;
+}
+
+//
+// Use Bootstrap Collapse
+//
+.collapse {
+  &:not(.show) {
+    display: none;
+  }
+}

@@ -1,0 +1,64 @@
+//
+// HTML heading elements
+//
+// The h1 through h6 elements are headings for the sections with which they are associated.
+// https://www.w3.org/TR/2012/WD-html-markup-20121025/h1.html#h1
+//
+// Default css values
+// https://www.w3schools.com/cssref/css_default_values.asp
+// 
+//
+// 1. Eric Meyer’s “Reset CSS” 2.0
+// 2. Change from `box-sizing: content-box` so that `width` is not affected
+// 3. Default CSS values
+//
+// By default use this headings ( h1, h2, h3 )
+//
+// Created on : 13.01.2019, 10:52:22
+// Author     : nik
+
+@if $enable-abstracts-base-elements-headings == true {
+    h1, h2, h3 {
+        display: block; // default
+        border: 0; // 1
+        padding: 0; // 1
+        font-weight: $headings-font-weight;
+        line-height: $headings-line-height;
+        vertical-align: baseline; // 1
+        color: $headings-color;
+        @include set-box-sizing-border-box; // 2 
+    }
+
+    h1 {
+        margin: $h1-margin;
+        font-size: $body-font-size * 2;
+        @include media-breakpoint-up(md) {
+            font-size: $body-font-size * 2.25;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: $body-font-size * 2.5;
+        }
+    }
+
+    h2 {
+        margin: $h2-margin;
+        font-size: $body-font-size * 1.5;
+        @include media-breakpoint-up(md) {
+            font-size: $body-font-size * 1.75;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: $body-font-size * 2;
+        }
+    }
+
+    h3 {
+        margin: $h3-margin;
+        font-size: $body-font-size * 1.25;
+        @include media-breakpoint-up(md) {
+            font-size: $body-font-size * 1.5;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: $body-font-size * 1.75;
+        }
+    }
+}

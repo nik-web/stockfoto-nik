@@ -1,0 +1,14 @@
+//
+// The HTML <datalist> element contains a set of <option> elements that represent
+// the values available for other controls.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist
+//
+// Created on : 21.01.2019, 12:26:19
+// Author     : nik
+
+@if $enable-abstracts-base-elements-datalist == true {
+    datalist {
+        @include set-box-sizing-border-box;
+    }
+}

@@ -1,0 +1,15 @@
+//
+// <em>: emphasis html element
+//
+// The HTML <em> element marks text that has stress emphasis. The <em> element
+// can be nested, with each level of nesting indicating a greater degree of emphasis.
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em
+//
+// Created on : 22.01.2019, 11:00:54
+// Author     : nik
+
+@if $enable-abstracts-base-elements-em == true {
+    em {
+        @include set-box-sizing-border-box;
+    }
+}

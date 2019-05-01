@@ -1,0 +1,13 @@
+//
+// The HTML <param> element defines parameters for an <object> element.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param
+//
+// Created on : 23.01.2019, 09:01:18
+// Author     : nik
+
+@if $enable-abstracts-base-elements-param == true {
+    param {
+        @include set-box-sizing-border-box;
+    }
+}

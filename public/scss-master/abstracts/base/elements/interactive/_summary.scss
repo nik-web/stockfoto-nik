@@ -1,0 +1,13 @@
+//
+// <summary>: disclosure summary html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary
+//
+// Created on : 21.01.2019, 13:01:54
+// Author     : nik
+
+@if $enable-abstracts-base-elements-summary == true {
+    summary {
+        @include set-box-sizing-border-box;
+    }
+}

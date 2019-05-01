@@ -1,0 +1,15 @@
+//
+// <dd>: description details element
+//
+// The HTML <dd> element provides the details about or the definition of the
+// preceding term (<dt>) in a description list (<dl>).
+//https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd
+//
+// Created on : 22.01.2019, 07:34:15
+// Author     : nik
+
+@if $enable-abstracts-base-elements-dd == true {
+    dd {
+        @include set-box-sizing-border-box;
+    }
+}

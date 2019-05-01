@@ -1,0 +1,34 @@
+//
+// Globale font properties
+//
+// Created on : 23.01.2019, 08:07:44
+//Author     : nik
+
+//
+// Font families by name
+// 
+// Initial: depends on user agent
+// Inherited: 	yes 
+//
+$font-family-sans-serif: sans-serif;
+$font-family-monospace: monospace;
+$font-family-fantasy: fantasy;
+
+$font-family-audiowide: Audiowide, fantasy;
+$font-family-open-sans: "Open Sans", sans-serif;
+
+//
+// Font weights by name
+//
+// If the font family doesn't provide the requested weight, it will use the closest 
+// available one.
+//
+$font-weight-thin: 100;
+$font-weight-extra-light: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-ultra-bold: 900;

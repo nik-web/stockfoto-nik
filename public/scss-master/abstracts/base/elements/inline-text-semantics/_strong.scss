@@ -1,0 +1,13 @@
+//
+// <strong> strong importance html element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong
+//
+// Created on : 22.01.2019, 11:50:24
+// Author     : nik
+
+@if $enable-abstracts-base-elements-strong == true {
+    strong {
+        @include set-box-sizing-border-box;
+    }
+}

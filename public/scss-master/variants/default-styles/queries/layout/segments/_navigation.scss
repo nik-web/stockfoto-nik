@@ -1,0 +1,62 @@
+//
+// Layout segment navigation
+//
+// Sticky resposiv navbar with max width
+// Only once on each page use html id attribute
+// 
+// Use html-elements:  <div>, <nav>
+//
+// Created on : 13.01.2019, 17:40
+// Updated on : 14.03.2019, 09:36
+// Author     : nik
+
+//
+// Navigation segment wrapper
+//
+// <div>: html element
+//
+// 1. fallback for sticky
+// 2. fallback for Safari
+// 3. over the entire screen width
+//
+#nav-wrapper {
+    position: relative; // 1
+    position: -webkit-sticky; // 2
+    position: sticky; //
+    top: 0;
+    z-index: 500;
+    min-height: 2.8rem;
+    @include make-container(); // 3
+    margin-bottom: 0.5rem;
+    background-color: $nav-bars-bg;
+}
+
+//
+// Navigation
+//
+// <nav>: html-element
+//
+// 1. allow us to do the the absolute position for the button for toggling
+// 2. responsive first
+// 3. set responsiv max-width
+// 4. baseline value will align flex items along their content's baseline
+// 5. allow us to do the line break for collapsing content
+#main-nav {
+    position: relative; // 1
+    display: flex;
+    flex-direction: column; // 2
+    height: 100%;
+    @include make-container();
+    @include make-container-max-widths(); // 3
+    align-items: baseline; // 4
+    flex-wrap: wrap; // 5
+    justify-content: flex-start;
+    background-color: inherit;
+    font-weight: $nav-font-weight;
+    line-height: $nav-line-height;
+    @include media-breakpoint-up($main-nav-breakpoint) {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;       
+    }
+}

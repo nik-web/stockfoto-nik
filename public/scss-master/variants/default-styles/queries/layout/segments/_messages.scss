@@ -1,0 +1,67 @@
+//
+// Layout segment messages
+//
+// Use html-elements:  <div>, <button>, <ul>, <li>
+//
+// Created on : 22.04.2019, 10:23:56
+// Author     : nik
+
+//
+// Close button
+//
+
+.close-messages {
+    position: absolute;
+    top: 0.125rem;
+    right: -0.125rem;
+    padding: 0.25rem 0.75rem;
+    color: inherit;
+}
+
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+}
+
+// Success message
+.alert-success {
+    background-color: $alert-success-bg;
+    border-color: $alert-success-border-color;
+    color: $alert-success-color;
+}
+
+.alert-info {
+    background-color: $alert-info-bg;
+    border-color: $alert-info-border-color;
+    color: $alert-info-color;
+}
+
+.alert-warning {
+    background-color: $alert-warning-bg;
+    border-color: $alert-warning-border-color;
+    color: $alert-warning-color;
+}
+
+// Error message
+.alert-danger {
+    background-color: $alert-danger-bg;
+    border-color: $alert-danger-border-color;
+    color: $alert-danger-color;
+}
+
+.alert-default {
+    background-color: $alert-default-bg;
+    border-color: $alert-default-border-color;
+}
+
+.messages-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.messages-list-item {
+    hyphens: auto;
+}

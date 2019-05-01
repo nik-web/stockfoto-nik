@@ -1,0 +1,15 @@
+//
+// Add embedded content html-elements 
+//
+// In addition to regular multimedia content, HTML can include a variety of other
+// content, even if it's not always easy to interact with.
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Embedded_content
+//
+// Created on : 23.01.2019, 09:05:18
+// Author     : nik
+
+@import 'embedded-content/embed',
+        'embedded-content/iframe',
+        'embedded-content/object',
+        'embedded-content/param',
+        'embedded-content/source';

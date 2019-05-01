@@ -1,0 +1,15 @@
+//
+// <tbody>: table body html element
+//
+// The HTML Table Body element (<tbody>) encapsulates a set of table row
+// (<tr> elements), indicating that they comprise the body of the table (<table>).
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody
+//
+// Created on : 22.01.2019, 06:29:24
+// Author     : nik
+
+@if $enable-abstracts-base-elements-tbody == true {
+    tbody {
+        @include set-box-sizing-border-box;
+    }
+}

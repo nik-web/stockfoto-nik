@@ -1,0 +1,17 @@
+//
+// The HTML <source> element 
+//
+// The HTML <source> element specifies multiple media resources for the <picture>,
+// the <audio> element, or the <video> element. It is an empty element, meaning
+// that it has no content and does not have a closing tag. It is commonly used
+// to serve the same media content in multiple formats supported by different browsers.
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source
+//
+// Created on : 23.01.2019, 09:03:13
+// Author     : nik
+
+@if $enable-abstracts-base-elements-source == true {
+    source {
+        @include set-box-sizing-border-box;
+    }
+}

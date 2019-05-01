@@ -1,0 +1,13 @@
+//
+// The HTML <legend> element represents a caption for the content of its parent <fieldset>.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend
+//
+// Created on : 21.01.2019, 12:16:00
+// Author     : nik
+
+@if $enable-abstracts-base-elements-legend == true {
+    legend {
+        @include set-box-sizing-border-box;
+    }
+}

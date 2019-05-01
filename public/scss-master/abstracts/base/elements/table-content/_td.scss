@@ -1,0 +1,14 @@
+//
+// <td>: table data cell element
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td
+//
+//
+// Created on : 22.01.2019, 06:39:17
+// Author     : nik
+
+@if $enable-abstracts-base-elements-td == true {
+    td {
+        @include set-box-sizing-border-box;
+    }
+}

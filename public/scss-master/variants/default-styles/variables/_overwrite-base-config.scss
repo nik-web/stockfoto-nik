@@ -1,0 +1,158 @@
+//
+// nik-test
+//
+// Overwrite enable or disable abstracts base optionens
+// 
+//
+// Created on : 29.01.2019, 11:02:25
+// Author     : nik
+
+//
+// Fonts optionen
+//
+$enable-abstracts-base-fonts-audiowide-v6-latin: true;
+$enable-abstracts-base-fonts-open-sans-v15-latin_cyrillic: true;
+
+//
+// Base elements optionen
+//
+
+// Base content-sectioning elements
+
+//$enable-abstracts-base-elements-address: true;
+//$enable-abstracts-base-elements-article: true;
+//$enable-abstracts-base-elements-aside: true;
+$enable-abstracts-base-elements-footer: true;
+$enable-abstracts-base-elements-header: true;
+$enable-abstracts-base-elements-headings: true;
+//$enable-abstracts-base-elements-hgroup: true;
+$enable-abstracts-base-elements-main: true;
+$enable-abstracts-base-elements-nav: true;
+//$enable-abstracts-base-elements-sectio: true;
+
+// Base demarcating-edits elements
+
+//$enable-abstracts-base-elements-del: true;
+//$enable-abstracts-base-elements-ins: true;
+
+// Base embedded-content elements
+//$enable-abstracts-base-elements-applet: true;
+//$enable-abstracts-base-elements-embed: true;
+//$enable-abstracts-base-elements-iframe: true;
+//$enable-abstracts-base-elements-noembed: true;
+//$enable-abstracts-base-elements-object: true;
+//$enable-abstracts-base-elements-param: true;
+//$enable-abstracts-base-elements-picture: true;
+//$enable-abstracts-base-elements-source: true;
+
+// Base forms elemets
+
+$enable-abstracts-base-elements-button: true;
+//$enable-abstracts-base-elements-datalist: true;
+$enable-abstracts-base-elements-fieldset: true;
+$enable-abstracts-base-elements-form: true;
+$enable-abstracts-base-elements-input: true;
+//$enable-abstracts-base-elements-keygen: true;
+$enable-abstracts-base-elements-label: true;
+$enable-abstracts-base-elements-legend: true;
+//$enable-abstracts-base-elements-meter: true;
+//$enable-abstracts-base-elements-optgroup: true;
+$enable-abstracts-base-elements-option: true;
+//$enable-abstracts-base-elements-output: true;
+//$enable-abstracts-base-elements-progress: true;
+$enable-abstracts-base-elements-select: true;
+//$enable-abstracts-base-elements-textarea: true;
+
+// Base image and multimedia elements
+
+//$enable-abstracts-base-elements-area: true;
+//$enable-abstracts-base-elements-audio: true;
+//$enable-abstracts-base-elements-canvas: true;
+//$enable-abstracts-base-elements-embed: true;
+//$enable-abstracts-base-elements-iframe: true;
+//$enable-abstracts-base-elements-img: true;
+//$enable-abstracts-base-elements-map: true;
+//$enable-abstracts-base-elements-math: true;
+//$enable-abstracts-base-elements-object: true;
+//$enable-abstracts-base-elements-param: true;
+//$enable-abstracts-base-elements-source: true;
+//$enable-abstracts-base-elements-svg: true;
+//$enable-abstracts-base-elements-track: true;
+//$enable-abstracts-base-elements-video: true;
+
+// Base inline text semantics elements
+
+$enable-abstracts-base-elements-a: true;
+//$enable-abstracts-base-elements-abbr: true;
+//$enable-abstracts-base-elements-b: true;
+//$enable-abstracts-base-elements-bdi: true;
+//$enable-abstracts-base-elements-bdo: true;
+//$enable-abstracts-base-elements-br: true;
+//$enable-abstracts-base-elements-cite: true;
+//$enable-abstracts-base-elements-code: true;
+//$enable-abstracts-base-elements-data: true;
+//$enable-abstracts-base-elements-dfn: true;
+//$enable-abstracts-base-elements-em: true;
+$enable-abstracts-base-elements-i: true;
+//$enable-abstracts-base-elements-kbd: true;
+//$enable-abstracts-base-elements-mark: true;
+//$enable-abstracts-base-elements-q: true;
+//$enable-abstracts-base-elements-samp: true;
+$enable-abstracts-base-elements-small: true;
+$enable-abstracts-base-elements-span: true;
+//$enable-abstracts-base-elements-strong: true;
+//$enable-abstracts-base-elements-sub: true;
+//$enable-abstracts-base-elements-sup: true;
+//$enable-abstracts-base-elements-time: true;
+//$enable-abstracts-base-elements-u: true;
+//$enable-abstracts-base-elements-var: true;
+//$enable-abstracts-base-elements-wbr: true;
+
+// Base interactive elemets
+
+//$enable-abstracts-base-elements-command: true;
+//$enable-abstracts-base-elements-details: true;
+//$enable-abstracts-base-elements-menu: true;
+//$enable-abstracts-base-elements-menuitems: true;
+//$enable-abstracts-base-elements-summary: true;
+
+// Base main root element
+
+$enable-abstracts-base-elements-document: true;
+
+// Base sectioning root element
+$enable-abstracts-base-elements-body: true;
+
+// Base table content elements
+
+//$enable-abstracts-base-elements-caption: true;
+//$enable-abstracts-base-elements-col: true;
+//$enable-abstracts-base-elements-colgroup: true;
+//$enable-abstracts-base-elements-table: true;
+//$enable-abstracts-base-elements-tbody: true;
+//$enable-abstracts-base-elements-td: true;
+//$enable-abstracts-base-elements-tfoot: true;
+//$enable-abstracts-base-elements-th: true;
+//$enable-abstracts-base-elements-thead: true;
+//$enable-abstracts-base-elements-tr: true;
+
+// Base text content elements
+
+//$enable-abstracts-base-elements-blockquote: true;
+//$enable-abstracts-base-elements-dd: true;
+$enable-abstracts-base-elements-div: true;
+//$enable-abstracts-base-elements-dl: true;
+//$enable-abstracts-base-elements-dt: true;
+//$enable-abstracts-base-elements-figure: true;
+//$enable-abstracts-base-elements-figurecaption: true;
+//$enable-abstracts-base-elements-hr: true;
+//$enable-abstracts-base-elements-li: true;
+//$enable-abstracts-base-elements-ol: true;
+$enable-abstracts-base-elements-p: true;
+//$enable-abstracts-base-elements-pre: true;
+$enable-abstracts-base-elements-ul: true;
+
+
+// Grid option
+
+$enable-grid-classes: true;

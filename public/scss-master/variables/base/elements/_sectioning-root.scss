@@ -1,0 +1,27 @@
+//
+// Variables of sectioning root html element
+//
+// <body>
+//
+// Created on : 23.01.2019, 10:04:45
+// Author     : nik
+
+// <body>
+$body-font-family: $font-family-open-sans !default;
+$body-font-style: normal !default;
+$body-font-variant: normal !default;
+$body-font-weight: $font-weight-light !default;
+$body-font-size: 1rem !default; // Assumes the browser default, typically `16px`
+// Word spacings
+// Specifies extra spacing in addition to the intrinsic inter-word spacing defined by the font.
+// https://www.w3.org/TR/css-text-3/#propdef-word-spacing
+// normal | <length>
+$body-word-spacing: 0.032rem !default;
+// Letter spacings
+// https://www.w3.org/TR/css-text-3/#propdef-letter-spacing
+// normal | <length>
+//$body-letter-spacing-base: normal;
+$body-letter-spacing: 0.028rem !default;
+// Overide the colors in variant color sheme
+$body-color: inherit !default;
+$body-bg: inherit !default;

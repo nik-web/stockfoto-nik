@@ -1,0 +1,19 @@
+//
+// Copyright notice
+//
+// Use html-elements <div>
+// 
+// Created on : 09.12.2018, 17:07:43
+// Updated on : 
+// Author     : nik
+
+//
+// Copyright notice wrapper container
+//
+#copyright-notice {
+    display: block;
+    @include make-container();
+    @include make-container-max-widths();
+    padding-top: .25rem;
+    text-align: center;
+}

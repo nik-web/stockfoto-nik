@@ -1,0 +1,12 @@
+//
+// <bdi>: bidirectional isolate html element
+//
+//
+// Created on : 22.01.2019, 10:55:21
+// Author     : nik
+
+@if $enable-abstracts-base-elements-bdi == true {
+    bdi {
+        @include set-box-sizing-border-box;
+    }
+}

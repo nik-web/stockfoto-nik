@@ -1,0 +1,14 @@
+//
+// The HTML <meter> element represents either a scalar value within a known
+// range or a fractional value.
+//
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter
+//
+// Created on : 21.01.2019, 12:34:32
+// Author     : nik
+
+@if $enable-abstracts-base-elements-meter == true {
+    meter {
+        @include set-box-sizing-border-box;
+    }
+}

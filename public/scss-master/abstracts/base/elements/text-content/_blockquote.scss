@@ -1,0 +1,14 @@
+//
+//
+//
+//
+//
+//
+// Created on : 22.01.2019, 07:24:18
+// Author     : nik
+
+@if $enable-abstracts-base-elements-blockquote == true {
+    blockquote {
+        @include set-box-sizing-border-box;
+    }
+}
