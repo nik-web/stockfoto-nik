@@ -2,7 +2,7 @@
 /**
  * stockfoto-nik cms
  * 
- * User module translate form elemets de_DE
+ * Image module translate form elemets de_DE
  *  
  * @author     Niklaus Höpfner <editor@nik-web.net>
  * @link       https://github.com/nik-web/stockfoto-nik
