@@ -80,6 +80,11 @@ class RbacManager implements RbacManagerInterface {
         
         $contributor = new Role('contributor');
         $contributor->addChild($customer);
+        $contributor->addPermission('image-start');
+        $contributor->addPermission('image-upload');
+        $contributor->addPermission('image-show');
+        $contributor->addPermission('image-file');
+        $contributor->addPermission('image-remove');
         
         $editor = new Role('editor');
         $editor->addChild($contributor);

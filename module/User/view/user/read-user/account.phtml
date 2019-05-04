@@ -90,6 +90,11 @@ $this->headMeta()->appendName('description', $description)
         </h2>
         <ul>
             <li>
+                <a href="<?= $this->url('image-start', ['locale' => $this->locale(),]); ?>" title="<?= $this->translate('link_title_image_start' . $path) ?>">            
+                    <?= $this->translate('link_image_start' . $path) . "\n" ?>
+                </a>
+            </li>
+            <li>
                 <a href="<?= $this->url('read-users', ['locale' => $this->locale(),]); ?>" title="<?= $this->translate('link_title_read_users' . $path) ?>">            
                     <?= $this->translate('link_read_users' . $path) . "\n" ?>
                 </a>

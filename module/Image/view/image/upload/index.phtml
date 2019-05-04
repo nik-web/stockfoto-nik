@@ -1,0 +1,73 @@
+<?php
+/**
+ * stockfoto-nik cms
+ * 
+ * Image view image upload index template (main content)
+ *  
+ * @author     Niklaus Höpfner <editor@nik-web.net>
+ * @link       https://github.com/nik-web/stockfoto-nik
+ * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
+ * @version    1.0.0
+ * @since      1.0.0
+ */
+
+//Individual part of the translate placeholder
+$path = '_module_image_view_upload_index';
+
+$title = $this->translate('title' . $path);
+$this->headTitle($title);
+$description = $this->translate('meta_description_content' . $path);
+$keywords = $this->translate('meta_keywords_content' . $path);
+$this->headMeta()->appendName('description', $description)
+    ->appendName('keywords', $keywords);
+
+$form = $this->form;
+$form->setAttribute('class', 'col-md-6');
+$file = $form->get('file');
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn-success');
+$form->prepare();
+?>
+<header id="main-header">
+    <h1>
+        <?= $this->translate('main_heading' . $path) . "\n" ?>        
+    </h1>
+    <p>
+        <?= $this->translate('header_paragraph' . $path . '_upload') . "\n" ?>        
+    </p>
+</header>
+<section class="row">
+    <?= $this->form()->openTag($form) . "\n" ?>
+        <fieldset>
+            <legend>
+                <?= $this->translate('legend' . $path . '_image_upload') . "\n" ?>                
+            </legend>
+            <div class="form-elemet-wrapper">
+                <?= $this->formLabel($file) ?>
+                <?= $this->formFile($file) ?>
+                <small id="file-description">
+                    <i>
+                        <?= $this->translate('form_file_description' . $path) . "\n" ?>
+                    </i>
+                </small>
+                <?= $this->formElementErrors()->render($file, ['class' => 'help-block']) ?>
+            </div>
+        </fieldset>
+        <div class="form-submit-wrapper">
+            <?= $this->formSubmit($submit) . "\n" ?>
+        </div> 
+    <?= $this->form()->closeTag() . "\n" ?>
+</section>
+<hr>
+<div class="row">
+    <p class="col-md-3">
+        <a href="<?= $this->url('image-start', ['locale' => $this->locale(),]); ?>" title="<?= $this->translate('link_title' . $path . '_image_start') ?>">
+            <?= $this->translate('link' . $path . '_image_start') . "\n" ?>
+        </a>
+    </p>
+    <p class="col-md-3">
+        <a href="<?= $this->url('image-show', ['locale' => $this->locale(),]); ?>" title="<?= $this->translate('link_title' . $path . '_image_show') ?>">
+            <?= $this->translate('link' . $path . '_image_show') . "\n" ?>
+        </a>
+    </p>
+</div>

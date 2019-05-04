@@ -282,6 +282,17 @@ select {
   select::before, select::after {
     box-sizing: border-box; }
 
+img {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+  img::before, img::after {
+    box-sizing: border-box; }
+
+.img-fluid {
+  max-width: 100%;
+  height: auto; }
+
 a {
   margin: 0;
   border: 0;
@@ -334,6 +345,25 @@ div {
   vertical-align: baseline;
   box-sizing: border-box; }
   div::before, div::after {
+    box-sizing: border-box; }
+
+figure {
+  display: block;
+  margin: 0;
+  padding: .5rem 0 0 0;
+  text-align: center;
+  box-sizing: border-box; }
+  figure::before, figure::after {
+    box-sizing: border-box; }
+
+hr {
+  box-sizing: border-box; }
+  hr::before, hr::after {
+    box-sizing: border-box; }
+
+li {
+  box-sizing: border-box; }
+  li::before, li::after {
     box-sizing: border-box; }
 
 p {
@@ -1144,6 +1174,7 @@ legend {
   padding: .25rem 1rem .25rem 1rem; }
 
 select,
+input[type="file"],
 input[type="text"],
 input[type="password"],
 input[type="submit"] {

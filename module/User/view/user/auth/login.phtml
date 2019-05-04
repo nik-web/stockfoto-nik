@@ -39,7 +39,7 @@ $form->prepare();
     </h1>
 </header>
 <div class="row">
-    <?= $this->form()->openTag($form) ?>
+    <?= $this->form()->openTag($form) . "\n" ?>
         <fieldset>
             <legend>
                 <?= $this->translate('form_fieldset_legend' . $path) . "\n" ?>                
@@ -62,19 +62,19 @@ $form->prepare();
                         <?= $this->translate('form_password_description' . $path) . "\n" ?>
                     </i>
                 </small>
-                <?= $this->formElementErrors()->render($password, ['class' => 'help-block']) ?>
+                <?= $this->formElementErrors()->render($password, ['class' => 'help-block']) . "\n" ?>
             </div>
         </fieldset>
         <div class="form-elemet-wrapper-small">
-            <?= $this->formElement($rememberMe) ?>
-            <?= $this->formLabel($rememberMe) ?>
-            <?= $this->formElementErrors()->render($rememberMe, ['class' => 'help-block']) ?>
+            <?= $this->formElement($rememberMe) . "\n" ?>
+            <?= $this->formLabel($rememberMe) . "\n" ?>
+            <?= $this->formElementErrors()->render($rememberMe, ['class' => 'help-block']) . "\n" ?>
         </div>
-        <?= $this->formElement($csrf) ?>
+        <?= $this->formElement($csrf) . "\n" ?>
         <div class="form-submit-wrapper">
-            <?= $this->formSubmit($submit) ?>
+            <?= $this->formSubmit($submit) . "\n" ?>
         </div>
-    <?= $this->form()->closeTag() ?>
+    <?= $this->form()->closeTag() . "\n" ?>
 </div>
 
 

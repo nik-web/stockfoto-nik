@@ -56,8 +56,6 @@ class UserReadManager implements UserReadManagerInterface
         $paginator->setDefaultItemCountPerPage($itemContPerPage);
         $paginator->setPageRange($pageRange);
         
-        //PaginationControl::setDefaultViewPartial('pagination_control_default.phtml');
-        
         return $paginator;  
     }
 }

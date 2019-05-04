@@ -10,6 +10,9 @@
 @if $enable-abstracts-base-elements-figure == true {
     figure {
         display: block;
+        margin: 0;
+        padding: .5rem 0 0 0;
+        text-align: center;
         @include set-box-sizing-border-box;
     }
 }

@@ -34,4 +34,5 @@ return [
     'Zend\Validator',
     'Application',
     'User',
+    'Image',
 ];

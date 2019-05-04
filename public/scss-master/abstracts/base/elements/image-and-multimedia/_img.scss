@@ -8,6 +8,13 @@
 
 @if $enable-abstracts-base-elements-img == true {
     img {
+        margin: 0;
+        padding: 0;
         @include set-box-sizing-border-box;
+    }
+    
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
     }
 }

@@ -35,4 +35,6 @@ return [
     'link_read_users' . $path                => 'Alle Nutzerkonten',
     'link_title_add_user' . $path            => 'Ein neues Nutzerkoto manuell anlegen.',
     'link_add_user' . $path                  => 'Nutzerkonto anlegen',
+    'link_title_image_start' . $path         => 'Bildarchiv, alle Bilder',
+    'link_image_start' . $path               => 'Bildarchiv',
 ];

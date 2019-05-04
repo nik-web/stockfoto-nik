@@ -1,0 +1,92 @@
+<?php
+/**
+ * stockfoto-nik cms
+ * 
+ * Image view image show index template (main content)
+ *  
+ * @author     Niklaus Höpfner <editor@nik-web.net>
+ * @link       https://github.com/nik-web/stockfoto-nik
+ * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
+ * @version    1.0.0
+ * @since      1.0.0
+ */
+
+//Individual part of the translate placeholder
+$path = '_module_image_view_show_index';
+
+$title = $this->translate('title' . $path);
+$this->headTitle($title);
+$description = $this->translate('meta_description_content' . $path);
+$keywords = $this->translate('meta_keywords_content' . $path);
+$this->headMeta()->appendName('description', $description)
+    ->appendName('keywords', $keywords);
+
+$pages = $this->paginator->count();
+$currentPage = $this->paginator->getCurrentPageNumber();
+$imagesCount = $this->paginator->getTotalItemCount();
+
+$paginationControl = $this->paginationControl(
+    $this->paginator,
+    'Sliding',
+    'partials/nav-bars/pagination_control_default.phtml',
+    ['route' => 'image-show']
+);
+?>
+<header id="main-header">
+    <h1>
+        <?= $this->translate('main_heading' . $path) . "\n" ?>        
+    </h1>
+    <p>
+        <?= sprintf($this->translate('header_paragraph' . $path . '_count'), $imagesCount, $pages) . "\n" ?>
+    </p>
+</header>
+<?php if($imagesCount == 0): ?>
+<div class="row">
+    <div class="col-12">
+        <p>
+            <i>
+                <?= $this->translate('paragraph' . $path . '_no_files') . "\n" ?>
+            </i>
+        </p>
+    </div>
+</div>
+<?php else: ?>
+<div class="row">
+<?php foreach($this->paginator as $file): ?> 
+    <figure class="col-lg-3 col-md-4 col-sm-6">
+        <img class="img-fluid" src="<?= $this->url('image-file', ['name'=> $file, 'thumbnail'=> true]); ?>" alt="<?= sprintf($this->translate('image_alt' . $path . '_image_file'), $file) ?>">
+        <figcaption>
+            <small>
+                <?= $file . "\n" ?>
+            </small>
+        </figcaption>
+        <p>
+            <a target="_blank" href="<?= $this->url('image-file', ['name'=> $file]); ?>" title="<?= sprintf($this->translate('link_title' . $path . '_image_file'), $file) ?>">
+                <?= $this->translate('link' . $path . '_image_file') . "\n" ?>
+            </a>
+        </p>
+        <p>
+            <a href="<?= $this->url('image-remove', ['locale' => $this->locale(), 'name'=> $file, 'page' => $currentPage,]); ?>" title="<?= sprintf($this->translate('link_title' . $path . '_image_remove'), $file) ?>">
+                <?= $this->translate('link' . $path . '_image_remove') . "\n" ?>
+            </a>
+        </p>
+    </figure>
+<?php endforeach; ?>
+</div>
+<div class="row">
+    <?= $paginationControl . "\n" ?>
+</div>
+<?php endif; ?>
+<hr>
+<div class="row">
+    <p class="col-md-3">
+        <a href="<?= $this->url('image-start', ['locale' => $this->locale(),]); ?>" title="<?= $this->translate('link_title' . $path . '_image_start') ?>">
+            <?= $this->translate('link' . $path . '_image_start') . "\n" ?>
+        </a>
+    </p>
+    <p class="col-md-3">
+        <a href="<?= $this->url('image-upload', ['locale' => $this->locale(),]); ?>" title="<?= $this->translate('link_title' . $path . '_image_upload') ?>">
+            <?= $this->translate('link' . $path . '_image_upload') . "\n" ?>
+        </a>
+    </p>
+</div>
